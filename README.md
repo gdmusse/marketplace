@@ -1,9 +1,22 @@
-### Elo4 3
+### 💻 Elo4 - Cruz-Marketplace 10 💻
 
-Link da API: https://documenter.getpostman.com/view/9133542/TVzXDFXL
+<p align="center">Link do Surge</p>
 
-Não esqueçam de editar o readme com: 
-- Integrantes do grupo
-- O que funciona
-- O que não funciona
-- **LINK DO SURGE**
+### Funcionamento 🛠
+
+- [x] O que funciona
+
+
+### Prints 🎨
+
+Imagem
+***
+
+Imagem
+***
+
+Imagem
+***
+
+Imagem
+***
