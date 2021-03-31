@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Header, Footer } from "../../components";
 import { Link } from "react-router-dom";
 import style from "styled-components";
 import "antd/dist/antd.css";
@@ -14,18 +13,25 @@ const contentStyle = {
   margin: "0",
 };
 
+const MainContainer = style.div`
+    width: 80vw;
+    margin: auto;
+`
+
 const FilterContainer = style.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100vw;
+    width: 80vw;
     height: 8vh;
     background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
     background: #E44E6D 0% 0% no-repeat padding-box;
     opacity: 1;
     color: #FFFFFF;
     font: Poppins;
-    font-size: 10px;
+    font-size: 11px;
+    margin: auto;
+    font-
 `;
 
 const InputDiv = style.div`
@@ -59,7 +65,7 @@ const SelectFilter = style.select`
 class SliderHome extends Component {
   render() {
     return (
-      <>
+      <MainContainer>
         <Carousel autoplay>
           <div>
             <h3 style={contentStyle}>Lorem Ipsum</h3>
@@ -96,7 +102,7 @@ class SliderHome extends Component {
             </SelectFilter>
           </InputDiv>
         </FilterContainer>
-      </>
+      </MainContainer>
     );
   }
 }
