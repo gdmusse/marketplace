@@ -16,6 +16,14 @@ box-shadow: 0px 3px 6px #00000029;
 opacity: 1;
 
 `
+const SubContainerHeader = styled.div`
+width: 80%;
+height: 15vh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+`
 const ContainerLojista = styled.div`
 `
 
@@ -27,10 +35,14 @@ text-align:center;
 `
 
 const ImagemLogo = styled.img`
-height: 90px;
+height: 80%;
 `
 
 const Logo = styled.div`
+height:100%;
+display :flex;
+align-items:center;
+justify-content:center;
 `
 const ButtonLojista = styled.button`
 text-transform: uppercase;
@@ -87,15 +99,17 @@ height:30px;
 `
 
 class Header extends Component {
-    render() {
-        return (
-            <ContainerHeader>
-                <ContainerLojista><ButtonLojista>Área do Logista</ButtonLojista></ContainerLojista>
-                <Logo><ImagemLogo src={logo}></ImagemLogo></Logo>
-                <ContainerCliente><ButtonCliente>Área do Cliente</ButtonCliente><Carrinho><CarrinhoImg src={carrinho}></CarrinhoImg></Carrinho></ContainerCliente>
-            </ContainerHeader>
-        )
-    }
+  render() {
+    return (
+      <ContainerHeader>
+        <SubContainerHeader>
+          <ContainerLojista><ButtonLojista>Área do Logista</ButtonLojista></ContainerLojista>
+          <Logo><ImagemLogo src={logo}></ImagemLogo></Logo>
+          <ContainerCliente><ButtonCliente>Área do Cliente</ButtonCliente><Carrinho><CarrinhoImg src={carrinho}></CarrinhoImg></Carrinho></ContainerCliente>
+        </SubContainerHeader>
+      </ContainerHeader>
+    )
+  }
 }
 
 export default Header
