@@ -1,26 +1,27 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-import logo from '.././imagens/logo/logo-branco.png'
-import face from '.././imagens/icones/facebook.png'
-import insta from '.././imagens/icones/insta.png'
-import twitter from '.././imagens/icones/twitter.png'
-import whatsapp from '../imagens/icones/whats.png'
+import styled from 'styled-components' 
+import Logo from '.././imagens/logo/logo-branco.png'
+import Face from '.././imagens/icones/facebook.png'
+import Insta from '.././imagens/icones/insta.png'
+import Twitter from '.././imagens/icones/twitter.png'
+import Whats  from '.././imagens/icones/whats.png'
 
-const Corfooter = styled.div`
-    background-color: #4A2F87;
-    height: 300px;
-    width: 100%;
+
+const CorFooter = styled.div`
+    background-color: #4A2F87;     
+    height: 250px;     
+    width: 100%; 
     display: flex;
     justify-content: center;
-    `
+    overflow: hidden;
+`      
+
 const ContainerFooter = styled.div`
-    width: 50vw;
+    width: 45vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
 `
 
 const ImagensFooter = styled.div`
@@ -78,15 +79,15 @@ class Footer extends Component {
     render (){
         return(
             <div>
-            <Corfooter>
+            <CorFooter>
                 <ContainerFooter>
                     <ImagensFooter> 
-                        <LogoFooter src={logo}/>
+                        <LogoFooter src={Logo}/>
                         <DivIcones>
-                            <Icones src= {face}/>
-                            <Icones src={insta}/>
-                            <Icones src={twitter}/>
-                            <Icones src={whatsapp}/>
+                            <Icones src= {Face}/>
+                            <Icones src={Insta}/>
+                            <Icones src={Twitter}/>
+                            <Icones src={Whats}/>
                         </DivIcones>
                     </ImagensFooter>
                         <ContainerPaginas>
@@ -99,7 +100,7 @@ class Footer extends Component {
                             <BotaoPaginas>Área do Cliente</BotaoPaginas>
                         </ContainerPaginas>
                         </ContainerFooter>
-                </Corfooter>
+                </CorFooter>
                 <CorCreditos>
                     <ContainerCreditos>
                         <TextoCreditos>
