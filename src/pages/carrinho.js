@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import trash from "../imagens/icones/trash.png";
 import trashwhite from "../imagens/icones/trash-white.png";
+import { Header, Footer } from "../components";
 
-const HeaderFake = styled.div`
-  height: 15vh;
-  box-shadow: 0px 3px 6px #00000029;
-`;
 const DivBody = styled.div`
   width: 80vw;
   margin: auto;
@@ -250,7 +247,7 @@ class Carrinho extends Component {
   render() {
     return (
       <div>
-        <HeaderFake>HEADER FAKE</HeaderFake>
+        <Header />
         <DivBody>
           <ContainerTitulo>
             <DivTitulo>Seu Carrinho</DivTitulo>
@@ -305,6 +302,7 @@ class Carrinho extends Component {
             </DivTotal>
           </ContainerCarrinho>
         </DivBody>
+        <Footer />
       </div>
     );
   }
