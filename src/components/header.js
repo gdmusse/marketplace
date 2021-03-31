@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import logo from '../imagens/logo/logo colorido.png'
+import logo from '../imagens/logo/logo-colorido.png'
 import carrinho from '../imagens/icones/shopping-cart.png'
 
 // position: fixed; - para fixar no topo

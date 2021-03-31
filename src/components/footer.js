@@ -27,20 +27,16 @@ const ContainerFooter = styled.div`
 const ImagensFooter = styled.div`
     width: 200px;
 `
-
-const DivIcones = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-`
-
-const Icones = styled.img`
-`
-
 const LogoFooter = styled.img`
     width: 200px;
 `
-
+const DivIcones = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+`
+const Icones = styled.img`
+`
 const ContainerPaginas = styled.div`
     display: grid;
     grid-column-gap: 15px;
@@ -49,8 +45,7 @@ const ContainerPaginas = styled.div`
     width: 400px;
     height: 150px;
 `
-
-const TituloPaginas = styled.button`
+const BotaoPaginas = styled.button`
     font-size: 20px;
     text-align: left;
     border: none;
@@ -64,57 +59,56 @@ const TituloPaginas = styled.button`
 `
 const CorCreditos = styled.div`
     background-color: #372365;
-    height: 45px;     
-    width: 100%; 
-`
-const ContainerCreditos = styled.div`
+    height: 45px;
+    width: 100%;
+    `
+
+const ContainerCreditos = styled.div`    
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    color: white;
+    justify-content: center;
     height: 45px;
-`
 
-const TextoCreditos = styled.label`
-    color: white;  
+`
+const TextoCreditos = styled.div`
 `
 
 class Footer extends Component {
     render (){
         return(
             <div>
-                <CorFooter>
-                    <ContainerFooter>
-                        <ImagensFooter>
-                            <LogoFooter src={Logo}/>
-
-                            <DivIcones>
-                                <Icones src={Face}/>
-                                <Icones src={Insta}/>
-                                <Icones src={Twitter}/>
-                                <Icones src={Whats}/>
-                            </DivIcones>
-                        </ImagensFooter>
-
-                        <ContainerPaginas> 
-                            <TituloPaginas>Home</TituloPaginas>
-                            <TituloPaginas>Loja 1</TituloPaginas>
-                            <TituloPaginas>Loja 3</TituloPaginas>
-                            <TituloPaginas>Área do Lojista</TituloPaginas>
-                            <TituloPaginas>Loja 2</TituloPaginas>
-                            <TituloPaginas>Loja 4</TituloPaginas>
-                            <TituloPaginas>Área do Cliente</TituloPaginas>
+            <CorFooter>
+                <ContainerFooter>
+                    <ImagensFooter> 
+                        <LogoFooter src={Logo}/>
+                        <DivIcones>
+                            <Icones src= {Face}/>
+                            <Icones src={Insta}/>
+                            <Icones src={Twitter}/>
+                            <Icones src={Whats}/>
+                        </DivIcones>
+                    </ImagensFooter>
+                        <ContainerPaginas>
+                            <BotaoPaginas>Home</BotaoPaginas>
+                            <BotaoPaginas>Loja 1</BotaoPaginas>
+                            <BotaoPaginas>Loja 3</BotaoPaginas>
+                            <BotaoPaginas>Área Lojista</BotaoPaginas>
+                            <BotaoPaginas>Loja 2</BotaoPaginas>
+                            <BotaoPaginas>Loja 4</BotaoPaginas>
+                            <BotaoPaginas>Área do Cliente</BotaoPaginas>
                         </ContainerPaginas>
-                    </ContainerFooter>
+                        </ContainerFooter>
                 </CorFooter>
                 <CorCreditos>
                     <ContainerCreditos>
-                        <TextoCreditos> 
-                            <b>Desenvolvido por </b>Bea, Cacau, Jatobá, Madu e Musse
+                        <TextoCreditos>
+                        <b>Desenvolvido por</b> Bea, Cacau, Jatobá, Madu e Musse
                         </TextoCreditos>
-                    </ContainerCreditos>
+                    </ContainerCreditos>   
                 </CorCreditos>
-            </div>
+                </div>
         )
     }
 }
