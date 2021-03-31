@@ -88,8 +88,8 @@ class Footer extends Component {
                     <ImagensFooter> 
                         <LogoFooter src={Logo}/>
                         <DivIcones>
-                            <Icones src= {Face}/>
                             <Icones src={Insta}/>
+                            <Icones src= {Face}/>
                             <Icones src={Twitter}/>
                             <Icones src={Whats}/>
                         </DivIcones>

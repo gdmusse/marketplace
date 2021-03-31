@@ -5,20 +5,29 @@ import styled from 'styled-components'
 const ContainterProdutos = styled.div`
     min-height: 500px;
     width: 80vw;
-    background-color: red;
     margin: auto;
 `
 
 const ContainerTitulo = styled.div`
+    margin-top: 60px;
     display: flex;
     justify-content: center;
+    align-items: center;
 `
 
-const Titulo =  styled.label`
+const Linha = styled.hr`
+    flex: auto;
+    width: auto;
+    border: 1px solid #AD2985;
+    opacity: 0.2;
+`
+
+const Titulo =  styled.div`
+    margin-left: 15px;
+    margin-right: 15px;
     font-weight: 500;
     font-size: 35px;
-    margin-left: 20px;
-    margin-right: 20px;
+    color: #AD2985;
 `
 
 // const ContainerTitulo = styled.div`
@@ -53,7 +62,9 @@ class ListaProdutos extends Component {
         return(
             <ContainterProdutos>
                 <ContainerTitulo>
-                    <Titulo>Produtos recém publicados</Titulo>
+                    <Linha/>
+                    <Titulo>Produtos Recentes</Titulo>
+                    <Linha/>
                 </ContainerTitulo>
                 {/* <DivTitulo>Seu Carrinho</DivTitulo> */}
 
