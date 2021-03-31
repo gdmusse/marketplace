@@ -1,7 +1,7 @@
 ### <p align="center">💻 Elo4 - Cruz-Marketplace 10 💻</p>
 
 <div align="center">
-  _Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá_
+  <i>Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá</i>
 </div> 
 
 <p align="center">Link do Surge</p>
