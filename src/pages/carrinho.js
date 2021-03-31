@@ -8,6 +8,7 @@ import { Header, Footer } from "../components";
 const DivBody = styled.div`
   width: 80vw;
   margin: auto;
+  margin-bottom: 60px;
 `;
 const ContainerTitulo = styled.div`
   margin-top: 10vh;
