@@ -8,7 +8,7 @@ import styled from 'styled-components'
 class ListaProdutos extends Component {
     render (){
         return(
-            <div>Teste Produtos</div>
+            <div>Teste teste Produtos</div>
         )
     }
 }
