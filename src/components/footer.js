@@ -10,7 +10,7 @@ import Whats  from '.././imagens/icones/whats.png'
 
 const CorFooter = styled.div`
     background-color: #4A2F87;     
-    height: 20vh;     
+    min-height: auto;     
     width: 100%; 
     display: flex;
     justify-content: center;
@@ -26,6 +26,8 @@ const ContainerFooter = styled.div`
 
 const ImagensFooter = styled.div`
     width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 `
 const LogoFooter = styled.img`
     width: 150px;
