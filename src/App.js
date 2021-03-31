@@ -1,7 +1,7 @@
-import React from 'react'
-import { Home, CadastroCliente, Carrinho, LoginCliente, NovoProduto } from './pages'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import './App.css'; 
+import {Home, CadastroCliente, Carrinho, LoginCliente, NovoProduto} from './pages'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
 
