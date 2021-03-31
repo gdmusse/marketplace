@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Header, Footer } from "../components";
 
 const ContainerTitulo = styled.div`
   margin-top: 10vh;
@@ -79,13 +80,15 @@ margin-bottom:50px;
 const Cadastrar = styled.p`
 color: #4a2f87;
 display:inline-block;
+margin-top: 30px;
 
 `
-const CadastrarBold = styled.button`
+const CadastrarBold = styled.a`
 color: #4a2f87;
 font-weight: 700;
 background-color:white;
 border: none;
+margin-left: 10px;
 `
 
 
@@ -95,6 +98,7 @@ class LoginCliente extends Component {
     render() {
         return (
             <div>
+              <Header/>
                 <ContainerTitulo><DivTitulo>Login</DivTitulo></ContainerTitulo>
                 <BigContainer>
                     <Container>
@@ -105,6 +109,7 @@ class LoginCliente extends Component {
                         <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold>Clique Aqui!</CadastrarBold>
                     </Container>
                 </BigContainer>
+              <Footer/>
             </div>
 
         )
