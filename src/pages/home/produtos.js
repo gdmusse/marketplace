@@ -43,10 +43,11 @@ const ListaDeProdutos = styled.div`
 
 const CardProduto = styled.div`
     width: 100%;
-    height: 520px;
+    height: auto;
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding-bottom: 20px;
     :hover {
         border-bottom: 5px solid #AD2985;
     }
