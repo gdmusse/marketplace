@@ -114,7 +114,7 @@ class LoginCliente extends Component {
           <Container>
             <Input placeholder='Nome'></Input>
             <Input placeholder='Email'></Input>
-            <ButtonLogin>Efetuar Login</ButtonLogin>
+            <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
             <div></div>
             <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
           </Container>
