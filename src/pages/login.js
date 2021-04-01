@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Header, Footer, DistanciaHeader} from "../components";
+import { Titulo } from "../components"
 import { Header, Footer } from "../components";
 import "antd/dist/antd.css";
 import { message, Button, Space } from 'antd';
@@ -26,6 +28,7 @@ const ContainerTitulo = styled.div`
         width: 100%;
         z-index: -1;
   }
+
 `;
 const DivTitulo = styled.div`
   padding: 20px;
@@ -103,24 +106,26 @@ class LoginCliente extends Component {
 
   render() {
 
-    return (
-      <div>
-        <Header />
-        <ContainerTitulo><DivTitulo>Login</DivTitulo></ContainerTitulo>
-        <BigContainer>
-          <Container>
-            <Input placeholder='Nome'></Input>
-            <Input placeholder='Email'></Input>
-            <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
-            <div></div>
-            <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
-          </Container>
-        </BigContainer>
-        <Footer />
-      </div>
+class LoginCliente extends Component {
+    render() {
+        return (
+            <div>
+              <Header/>
+              <DistanciaHeader/>
+              <Titulo titulo='Login'/>  
+              
+                <BigContainer>
+                    <Container>
+                        <Input placeholder='Nome'></Input>
+                        <Input placeholder='Email'></Input>
+                        <ButtonLogin>Efetuar Login</ButtonLogin>
+                        <div></div>
+                        <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
+                    </Container>
+                </BigContainer>
+              <Footer/>
+            </div>
+          }
 
-    )
-  }
-}
 
 export default LoginCliente

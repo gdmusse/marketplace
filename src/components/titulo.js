@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 
 const ContainerTitulo = styled.div`
-    margin-top: 60px;
-    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80vw;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
 `
 
 const Linha = styled.hr`
