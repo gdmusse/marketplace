@@ -300,6 +300,7 @@ class ListaProdutos extends Component {
             </InputDiv>
           </FilterContainer>
         </ColorFilter>
+
         <ContainterProdutos>
           <Titulo titulo="Produtos Recentes" />
           <ListaDeProdutos>
@@ -314,7 +315,7 @@ class ListaProdutos extends Component {
                       <NomeProduto>{produto.name}</NomeProduto>
                       <DescricaoProduto>{produto.description}</DescricaoProduto>
                       <PrecoProduto>R${produto.price}</PrecoProduto>
-                      <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
+                      <BotaoAdiciconar  onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdiciconar>
                     </InfosProduto>
                   </CardProduto>
                 ))
