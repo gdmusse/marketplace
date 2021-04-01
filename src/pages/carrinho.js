@@ -3,40 +3,13 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import trash from "../imagens/icones/trash.png";
 import trashwhite from "../imagens/icones/trash-white.png";
-import { Header, Footer } from "../components";
+import { Header, Footer, DistanciaHeader} from "../components";
+import { Titulo } from "../components"
 
 const DivBody = styled.div`
   width: 80vw;
   margin: auto;
   margin-bottom: 60px;
-`;
-const ContainerTitulo = styled.div`
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: 500;
-  color: #ad2985;
-  display: flex;
-  position: relative;
-  z-index: 1;
-  &:before {
-    border-top: 2px solid #ad2985;
-    opacity: 0.2;
-    content: "";
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-  }
-`;
-const DivTitulo = styled.div`
-  padding: 20px;
-  background: #fff;
 `;
 const ContainerCarrinho = styled.div`
   display: flex;
@@ -249,10 +222,10 @@ class Carrinho extends Component {
     return (
       <div>
         <Header />
+            <DistanciaHeader/>
+            <Titulo titulo='Carrinho'/>
+            
         <DivBody>
-          <ContainerTitulo>
-            <DivTitulo>Seu Carrinho</DivTitulo>
-          </ContainerTitulo>
           <ContainerCarrinho>
             <DivTitulos>
               <Coluna1>
