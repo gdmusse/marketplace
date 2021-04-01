@@ -223,7 +223,7 @@ class CadastroCliente extends Component {
         return(
             <div>
                 <Header/>
-                <ContainerTitulo><DivTitulo>Cadastro de</DivTitulo></ContainerTitulo>
+                <ContainerTitulo><DivTitulo>Cadastro de Clientes</DivTitulo></ContainerTitulo>
                 <SignUP>
                     <Row>
                         <Col span={24}><InputNome placeholder='Nome Completo'></InputNome></Col>
@@ -239,9 +239,9 @@ class CadastroCliente extends Component {
                             <Col span={6}><InputTel placeholder='Telefone'></InputTel></Col>
                         </Row>
                         <Row>
-                            <Col span={6}></Col>
                             <Col span={6}><InputSen placeholder='Senha'></InputSen></Col>
                             <Col span={6}><InputConf placeholder='Confirmar Senha'></InputConf></Col>
+                            <Col span={6}></Col>
                             <Col span={6}></Col>
                     </Row>
                 </SignUP>
