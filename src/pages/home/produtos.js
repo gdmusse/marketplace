@@ -1,36 +1,12 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import {Titulo} from '../../components'
 
 const ContainterProdutos = styled.div`
     min-height: 500px;
     width: 80vw;
     margin: auto;
-`
-
-const ContainerTitulo = styled.div`
-    margin-top: 60px;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-const Linha = styled.hr`
-    flex: auto;
-    width: auto;
-    border: 1px solid #AD2985;
-    background-color: #AD2985;
-    border-radius: 100px;
-    opacity: 0.2;
-`
-
-const Titulo =  styled.div`
-    margin-left: 15px;
-    margin-right: 15px;
-    font-weight: 500;
-    font-size: 35px;
-    color: #AD2985;
 `
 
 const ListaDeProdutos = styled.div`
@@ -156,12 +132,8 @@ class ListaProdutos extends Component {
     render (){
         return(
             <ContainterProdutos>
-                <ContainerTitulo>
-                    <Linha/>
-                    <Titulo>Produtos Recentes</Titulo>
-                    <Linha/>
-                </ContainerTitulo>
                 
+                <Titulo titulo='Produtos Recentes'/>
                 <ListaDeProdutos>
                     {this.state.produtos.length > 0 ?
                         this.state.produtos.map ((produto) => (
