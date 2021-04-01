@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import { Header, Footer, DistanciaHeader} from "../components";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Header, Footer, DistanciaHeader } from "../components";
 import { Titulo } from "../components"
 import styled from 'styled-components'
 
@@ -104,49 +104,49 @@ color: #E44E6D;
   }
   margin-bottom: 3%;
   `
-  const Letter = styled.p`
+const Letter = styled.p`
   color: #4A2F87;
   `
 
-  const ImgDiv = styled.div`
+const ImgDiv = styled.div`
   width: 200px;
   height: 200px;
   background-color: #E44E6D;
  
   `
-   const Img = styled.img`
+const Img = styled.img`
   
   `
 
 class NovoProduto extends Component {
-    render (){
-        return(
-            <ContainerAlturaPagina> 
-                <Header/>
-                    <ContainerTitulo>
-                        <DistanciaHeader/>
-                        <Titulo titulo='Novo Produto'/>
-                    </ContainerTitulo>
-                    <MainContainer>
+    render() {
+        return (
+            <ContainerAlturaPagina>
+                <Header />
+                <ContainerTitulo>
+                    <DistanciaHeader />
+                    <Titulo titulo='Novo Produto' />
+                </ContainerTitulo>
+                <MainContainer>
                     <Container>
                         <ContainerInput1>
                             <Letter>Loja</Letter>
-                            <Input></Input>
+                            <Input placeholder='Nome da Loja'></Input>
                             <Letter>Descrição</Letter>
-                            <Input></Input>
+                            <Input placeholder='Ex: Vaso de ceramica medio'></Input>
                             <Letter>Formas de Pagamento</Letter>
                             <Select>
-                            <option value={""}></option>
+                                <option value={""}></option>
                                 <option value={"Cartao"} >Cartão </option>
                                 <option value={"Dinheiro"}>Dinheiro</option>
                             </Select>
                         </ContainerInput1>
-                    
+
                         <ContainerInput2>
-                        <Letter>Nome do Produto</Letter>
-                            <Input></Input>
+                            <Letter>Nome do Produto</Letter>
+                            <Input placeholder="Ex: Vaso Feliz"></Input>
                             <Letter>Preço</Letter>
-                            <Input></Input>
+                            <Input placeholder="Ex: 99,99"></Input>
                             <Letter>Número de Parcelas</Letter>
                             <Select>
                                 <option value={""}></option>
@@ -159,16 +159,16 @@ class NovoProduto extends Component {
                             </Select>
                         </ContainerInput2>
                         <ContainerInput3>
-                        <Letter>Imagem</Letter>
-                            <Input></Input>
+                            <Letter>Imagem</Letter>
+                            <Input placeholder='Link da Imagem'></Input>
                             <ImgDiv><Img></Img></ImgDiv>
                         </ContainerInput3>
                     </Container>
-                    </MainContainer>
-                    <ButtonFlex>
+                </MainContainer>
+                <ButtonFlex>
                     <ButtonLojista>Publicar Produto</ButtonLojista>
-                    </ButtonFlex>
-                <Footer/>
+                </ButtonFlex>
+                <Footer />
             </ContainerAlturaPagina>
         )
     }
