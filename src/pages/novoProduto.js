@@ -4,6 +4,13 @@ import { Header, Footer, DistanciaHeader} from "../components";
 import { Titulo } from "../components"
 import styled from 'styled-components'
 
+const ContainerAlturaPagina = styled.div`
+min-height: 100vh;
+display: flex;
+flex-flow: column;
+justify-content: space-between;
+`
+
 const ContainerTitulo = styled.div`
     width: 80vw;
     margin: auto;
@@ -12,14 +19,14 @@ const ContainerTitulo = styled.div`
 class NovoProduto extends Component {
     render (){
         return(
-            <div> 
+            <ContainerAlturaPagina> 
                 <Header/>
                     <ContainerTitulo>
                         <DistanciaHeader/>
                         <Titulo titulo='Novo Produto'/>
                     </ContainerTitulo>
                 <Footer/>
-            </div>
+            </ContainerAlturaPagina>
         )
     }
 }

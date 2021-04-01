@@ -7,10 +7,13 @@ import "antd/dist/antd.css";
 import { message, Button, Space } from 'antd';
 
 
-const DivTitulo = styled.div`
-  padding: 20px;
-  background: #fff; 
-`;
+const ContainerAlturaPagina = styled.div`
+min-height: 100vh;
+display: flex;
+flex-flow: column;
+justify-content: space-between;
+`
+
 
 const ButtonLogin = styled.button`
 text-transform: uppercase;
@@ -81,7 +84,7 @@ const warning = () => {
 class LoginCliente extends Component {
   render() {
     return (
-      <div>
+      <ContainerAlturaPagina>
         <Header />
         <DistanciaHeader />
         <Titulo titulo='Login' />
@@ -98,7 +101,7 @@ class LoginCliente extends Component {
           </Container>
         </BigContainer>
         <Footer />
-      </div>
+      </ContainerAlturaPagina>
     )
   }
 
