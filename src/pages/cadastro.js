@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import 'antd/dist/antd.css';
 import { Row, Col } from 'antd';
-import { Header, Footer, DistanciaHeader} from "../components";
+import { Header, Footer, DistanciaHeader } from "../components";
 import { Titulo } from "../components"
+import { message, Button, Space } from 'antd';
 
 const ButtonLogin = styled.button`
 text-transform: uppercase;
@@ -192,44 +193,47 @@ background-color:white;
 border: none;
 margin-left: 10px;
 `
+const warning = () => {
+    message.warning('Esse Cadastro é apenas uma simulação');
+};
 
 class CadastroCliente extends Component {
-    render (){
-        return(
+    render() {
+        return (
             <div>
-                <Header/>
-                <DistanciaHeader/>
-        
-                <Titulo titulo='Cadastro de usuários'/>
+                <Header />
+                <DistanciaHeader />
+
+                <Titulo titulo='Cadastro de usuários' />
                 <SignUP>
                     <Row>
                         <Col span={24}><InputNome placeholder='Nome Completo'></InputNome></Col>
-                        </Row>
-                        <Row>
-                            <Col span={12}><InputEnd placeholder='Endereço'></InputEnd></Col>
-                            <Col span={12}><InputComp placeholder='Complemento'></InputComp></Col>
-                        </Row>
-                        <Row>
-                            <Col span={6}><InputCep placeholder='CEP'></InputCep></Col>
-                            <Col span={6}><InputCid placeholder='Cidade'></InputCid></Col>
-                            <Col span={6}><InputEst placeholder='Estado'></InputEst></Col>
-                            <Col span={6}><InputTel placeholder='Telefone'></InputTel></Col>
-                        </Row>
-                        <Row>
-                            <Col span={6}></Col>
-                            <Col span={6}><InputSen placeholder='Senha'></InputSen></Col>
-                            <Col span={6}><InputConf placeholder='Confirmar Senha'></InputConf></Col>
-                            <Col span={6}></Col>
+                    </Row>
+                    <Row>
+                        <Col span={12}><InputEnd placeholder='Endereço'></InputEnd></Col>
+                        <Col span={12}><InputComp placeholder='Complemento'></InputComp></Col>
+                    </Row>
+                    <Row>
+                        <Col span={6}><InputCep placeholder='CEP'></InputCep></Col>
+                        <Col span={6}><InputCid placeholder='Cidade'></InputCid></Col>
+                        <Col span={6}><InputEst placeholder='Estado'></InputEst></Col>
+                        <Col span={6}><InputTel placeholder='Telefone'></InputTel></Col>
+                    </Row>
+                    <Row>
+                        <Col span={6}></Col>
+                        <Col span={6}><InputSen placeholder='Senha'></InputSen></Col>
+                        <Col span={6}><InputConf placeholder='Confirmar Senha'></InputConf></Col>
+                        <Col span={6}></Col>
                     </Row>
                 </SignUP>
                 <BigContainer>
                     <Container>
-                        <ButtonLogin>Cadastrar</ButtonLogin>
+                        <ButtonLogin onClick={warning}>Cadastrar</ButtonLogin>
                         <div></div>
-                        <Cadastrar>Já é cadastrado?</Cadastrar><CadastrarBold>Clique Aqui!</CadastrarBold>
+                        <Cadastrar>Já é cadastrado?</Cadastrar><Link to="/login-cliente"><CadastrarBold>Clique Aqui!</CadastrarBold></Link>
                     </Container>
                 </BigContainer>
-                <Footer/>
+                <Footer />
             </div>
         )
     }
