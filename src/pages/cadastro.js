@@ -3,33 +3,8 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import 'antd/dist/antd.css';
 import { Row, Col } from 'antd';
-import { Header, Footer } from "../components";
-
-const ContainerTitulo = styled.div`
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 500;
-    color: #ad2985;
-    display: flex;
-    position: relative;
-    z-index: 1;
-    &:before {
-        border-top: 2px solid #ad2985;
-        opacity: 0.2;
-        content:"";
-        margin: 0 auto;
-        position: absolute;
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 100%;
-        z-index: -1;
-    }
-`
-const DivTitulo = styled.div`
-  padding: 20px;
-  background: #fff; 
-`
+import { Header, Footer, DistanciaHeader} from "../components";
+import { Titulo } from "../components"
 
 const ButtonLogin = styled.button`
 text-transform: uppercase;
@@ -223,7 +198,9 @@ class CadastroCliente extends Component {
         return(
             <div>
                 <Header/>
-                <ContainerTitulo><DivTitulo>Cadastro de</DivTitulo></ContainerTitulo>
+                <DistanciaHeader/>
+        
+                <Titulo titulo='Cadastro de usuários'/>
                 <SignUP>
                     <Row>
                         <Col span={24}><InputNome placeholder='Nome Completo'></InputNome></Col>
