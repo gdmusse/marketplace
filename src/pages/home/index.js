@@ -7,12 +7,15 @@ import {Header, Footer, DistanciaHeader} from '../../components'
 
 class Home extends Component {
     render (){
+        
+
+        console.log(this.props.produtosNoCarrinho)
         return(
             <div>
-                <Header/>
+                <Header produtosNoCarrinho={this.props.produtosNoCarrinho}/>
                 <DistanciaHeader/>
                 <SliderHome/>
-                <ListaProdutos/>
+                <ListaProdutos adicionarProduto={this.props.adicionarProduto}/>
                 <Footer/>
             </div>
         )

@@ -34,7 +34,17 @@ const DivInfos = styled.div`
   opacity: 1;
   display: flex;
 `;
+
+const DivItem = styled.div`
+  display: flex;
+`
+
 const TextoTitulos = styled.div``;
+
+const ImagemProduto = styled.img`
+  height: 100px;
+`
+
 const Coluna1 = styled.div`
   flex: 1;
   display: flex;
@@ -221,7 +231,7 @@ class Carrinho extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header produtosNoCarrinho={this.props.produtosNoCarrinho} />
             <DistanciaHeader/>
             <Titulo titulo='Carrinho'/>
             
@@ -247,22 +257,47 @@ class Carrinho extends Component {
                 <TextoTitulos>Ações</TextoTitulos>
               </Coluna6>
             </DivTitulos>
+
+            {/* {this.state.produtos.length > 0
+              ? listaFiltrada.map((produto) => (
+                  <CardProduto>
+                    <DivImagem>
+                      <ImagemProduto src={produto.photos} />
+                      <NomeLoja>{produto.category}</NomeLoja>
+                    </DivImagem>
+                    <InfosProduto>
+                      <NomeProduto>{produto.name}</NomeProduto>
+                      <DescricaoProduto>{produto.description}</DescricaoProduto>
+                      <PrecoProduto>R${produto.price}</PrecoProduto>
+                      <BotaoAdiciconar  onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdiciconar>
+                    </InfosProduto>
+                  </CardProduto>
+                ))
+              : this.state.carregandoProdutos
+              ? "Carregando produtos..."
+              : "Nenhum produto disponível"} */}
+
             <DivInfos>
-              <Coluna1>Imagem</Coluna1>
-              <Coluna2>Nomeeeeee</Coluna2>
-              <Coluna3>Loja</Coluna3>
-              <Coluna4>1</Coluna4>
-              <Coluna5>R$ 500</Coluna5>
-              <Coluna6>
-                <DivBotoes>
-                  <BotaoAdicionar>Adicionar Produto</BotaoAdicionar>
-                  <BotaoRemover>
-                    <ImagensBotoes src={trash}></ImagensBotoes>
-                    <ImagensBotoesHover src={trashwhite}></ImagensBotoesHover>
-                  </BotaoRemover>
-                </DivBotoes>
-              </Coluna6>
+              {this.props.carrinho.map(produto => ( 
+              <DivItem>
+                <Coluna1><ImagemProduto src={produto.photos} /></Coluna1>
+                <Coluna2>{produto.name}</Coluna2>
+                <Coluna3>{produto.category}</Coluna3>
+                <Coluna4>{produto.quantidade}</Coluna4>
+                <Coluna5>R${produto.price*produto.quantidade}</Coluna5>
+                <Coluna6>
+                  <DivBotoes>
+                    <BotaoAdicionar onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdicionar>
+                    <BotaoRemover>
+                      <ImagensBotoes src={trash}></ImagensBotoes>
+                      <ImagensBotoesHover src={trashwhite}></ImagensBotoesHover>
+                    </BotaoRemover>
+                  </DivBotoes>
+                </Coluna6>
+            </DivItem>
+            ))}
             </DivInfos>
+
             <DivTotal>
               <DivTituloTotal> Total da Compra</DivTituloTotal>
               <DivInformacoesTotal>
