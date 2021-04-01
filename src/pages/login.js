@@ -97,7 +97,7 @@ class LoginCliente extends Component {
             <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
 
             <div></div>
-            <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
+            <Cadastrar>Ainda não é cadastrado?</Cadastrar><Link to="/cadastro-cliente"><CadastrarBold>Clique Aqui!</CadastrarBold></Link>
           </Container>
         </BigContainer>
         <Footer />
