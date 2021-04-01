@@ -201,29 +201,27 @@ class CadastroCliente extends Component {
     render() {
         return (
             <div>
-                <Header />
-                <DistanciaHeader />
-
-                <Titulo titulo='Cadastro de usuários' />
+                <Header/>
+                <ContainerTitulo><DivTitulo>Cadastro de Clientes</DivTitulo></ContainerTitulo>
                 <SignUP>
                     <Row>
                         <Col span={24}><InputNome placeholder='Nome Completo'></InputNome></Col>
-                    </Row>
-                    <Row>
-                        <Col span={12}><InputEnd placeholder='Endereço'></InputEnd></Col>
-                        <Col span={12}><InputComp placeholder='Complemento'></InputComp></Col>
-                    </Row>
-                    <Row>
-                        <Col span={6}><InputCep placeholder='CEP'></InputCep></Col>
-                        <Col span={6}><InputCid placeholder='Cidade'></InputCid></Col>
-                        <Col span={6}><InputEst placeholder='Estado'></InputEst></Col>
-                        <Col span={6}><InputTel placeholder='Telefone'></InputTel></Col>
-                    </Row>
-                    <Row>
-                        <Col span={6}></Col>
-                        <Col span={6}><InputSen placeholder='Senha'></InputSen></Col>
-                        <Col span={6}><InputConf placeholder='Confirmar Senha'></InputConf></Col>
-                        <Col span={6}></Col>
+                        </Row>
+                        <Row>
+                            <Col span={12}><InputEnd placeholder='Endereço'></InputEnd></Col>
+                            <Col span={12}><InputComp placeholder='Complemento'></InputComp></Col>
+                        </Row>
+                        <Row>
+                            <Col span={6}><InputCep placeholder='CEP'></InputCep></Col>
+                            <Col span={6}><InputCid placeholder='Cidade'></InputCid></Col>
+                            <Col span={6}><InputEst placeholder='Estado'></InputEst></Col>
+                            <Col span={6}><InputTel placeholder='Telefone'></InputTel></Col>
+                        </Row>
+                        <Row>
+                            <Col span={6}><InputSen placeholder='Senha'></InputSen></Col>
+                            <Col span={6}><InputConf placeholder='Confirmar Senha'></InputConf></Col>
+                            <Col span={6}></Col>
+                            <Col span={6}></Col>
                     </Row>
                 </SignUP>
                 <BigContainer>
