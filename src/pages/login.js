@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Header, Footer } from "../components";
+import "antd/dist/antd.css";
+import { message, Button, Space } from 'antd';
+
 
 const ContainerTitulo = styled.div`
   margin-top: 10vh;
@@ -83,37 +86,41 @@ display:inline-block;
 margin-top: 30px;
 
 `
-const CadastrarBold = styled.a`
+const CadastrarBold = styled.button`
 color: #4a2f87;
 font-weight: 700;
 background-color:white;
 border: none;
 margin-left: 10px;
 `
-
-
+const warning = () => {
+  message.warning('Esse Login é apenas umas simulação');
+};
 
 
 class LoginCliente extends Component {
-    render() {
-        return (
-            <div>
-              <Header/>
-                <ContainerTitulo><DivTitulo>Login</DivTitulo></ContainerTitulo>
-                <BigContainer>
-                    <Container>
-                        <Input placeholder='Nome'></Input>
-                        <Input placeholder='Email'></Input>
-                        <ButtonLogin>Efetuar Login</ButtonLogin>
-                        <div></div>
-                        <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold>Clique Aqui!</CadastrarBold>
-                    </Container>
-                </BigContainer>
-              <Footer/>
-            </div>
 
-        )
-    }
+
+  render() {
+
+    return (
+      <div>
+        <Header />
+        <ContainerTitulo><DivTitulo>Login</DivTitulo></ContainerTitulo>
+        <BigContainer>
+          <Container>
+            <Input placeholder='Nome'></Input>
+            <Input placeholder='Email'></Input>
+            <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
+            <div></div>
+            <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
+          </Container>
+        </BigContainer>
+        <Footer />
+      </div>
+
+    )
+  }
 }
 
 export default LoginCliente

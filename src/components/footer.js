@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components' 
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 import Logo from '.././imagens/logo/logo-branco.png'
 import Face from '.././imagens/icones/facebook.png'
 import Insta from '.././imagens/icones/insta.png'
 import Twitter from '.././imagens/icones/twitter.png'
-import Whats  from '.././imagens/icones/whats.png'
+import Whats from '.././imagens/icones/whats.png'
 
 
 const CorFooter = styled.div`
@@ -15,7 +15,7 @@ const CorFooter = styled.div`
     display: flex;
     justify-content: center;
     overflow: hidden;
-`      
+`
 
 const ContainerFooter = styled.div`
     width: 35vw;
@@ -58,6 +58,7 @@ const BotaoPaginas = styled.button`
     opacity: 1;
     :hover {
         opacity: .8;
+        cursor: pointer;
     }
 `
 const CorCreditos = styled.div`
@@ -80,39 +81,39 @@ const TextoCreditos = styled.div`
 `
 
 class Footer extends Component {
-    render (){
-        return(
+    render() {
+        return (
             <div>
-            <CorFooter>
-                <ContainerFooter>
-                    <ImagensFooter> 
-                        <LogoFooter src={Logo}/>
-                        <DivIcones>
-                            <Icones src={Insta}/>
-                            <Icones src= {Face}/>
-                            <Icones src={Twitter}/>
-                            <Icones src={Whats}/>
-                        </DivIcones>
-                    </ImagensFooter>
+                <CorFooter>
+                    <ContainerFooter>
+                        <ImagensFooter>
+                            <LogoFooter src={Logo} />
+                            <DivIcones>
+                                <Icones src={Insta} />
+                                <Icones src={Face} />
+                                <Icones src={Twitter} />
+                                <Icones src={Whats} />
+                            </DivIcones>
+                        </ImagensFooter>
                         <ContainerPaginas>
-                            <BotaoPaginas>Home</BotaoPaginas>
+                            <Link to='/'><BotaoPaginas>Home</BotaoPaginas></Link>
                             <BotaoPaginas>Loja 1</BotaoPaginas>
                             <BotaoPaginas>Loja 3</BotaoPaginas>
-                            <BotaoPaginas>Área Lojista</BotaoPaginas>
+                            <Link to='novo-produto'><BotaoPaginas>Área Lojista</BotaoPaginas></Link>
                             <BotaoPaginas>Loja 2</BotaoPaginas>
                             <BotaoPaginas>Loja 4</BotaoPaginas>
-                            <BotaoPaginas>Área do Cliente</BotaoPaginas>
+                            <Link to='login-cliente'><BotaoPaginas>Área do Cliente</BotaoPaginas></Link>
                         </ContainerPaginas>
-                        </ContainerFooter>
+                    </ContainerFooter>
                 </CorFooter>
                 <CorCreditos>
                     <ContainerCreditos>
                         <TextoCreditos>
-                        Desenvolvido por Bea, Cacau, Jatobá, Madu e Musse
+                            Desenvolvido por Bea, Cacau, Jatobá, Madu e Musse
                         </TextoCreditos>
-                    </ContainerCreditos>   
+                    </ContainerCreditos>
                 </CorCreditos>
-                </div>
+            </div>
         )
     }
 }

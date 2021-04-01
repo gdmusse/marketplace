@@ -46,6 +46,15 @@ display :flex;
 align-items:center;
 justify-content:center;
 `
+const LogoButton = styled.button`
+height: 100%;
+background-color: #FFF;
+border:0;
+&:hover {
+    cursor: pointer;
+  }
+`
+
 const ButtonLojista = styled.button`
 text-transform: uppercase;
 border: 3px solid #E44E6D;
@@ -67,6 +76,9 @@ color: #E44E6D;
   color: white;
   transition: 150ms;
 }
+&:hover {
+    cursor: pointer;
+  }
 `
 
 const ButtonCliente = styled.button`
@@ -89,12 +101,18 @@ color: #E44E6D;
 text-decoration: underline;
   transition: 150ms;
 }
+&:hover {
+    cursor: pointer;
+  }
 `
 const Carrinho = styled.button`
 width: 50px;
 height: 45px;
 background-color: white;
 border: 0;
+&:hover {
+    cursor: pointer;
+  }
 `
 const CarrinhoImg = styled.img`
 height:30px;
@@ -105,9 +123,10 @@ class Header extends Component {
     return (
       <ContainerHeader>
         <SubContainerHeader>
-          <ContainerLojista><ButtonLojista>Área do Logista</ButtonLojista></ContainerLojista>
-          <Logo><ImagemLogo src={logo}></ImagemLogo></Logo>
-          <ContainerCliente><ButtonCliente>Área do Cliente</ButtonCliente><Carrinho><CarrinhoImg src={carrinho}></CarrinhoImg></Carrinho></ContainerCliente>
+          <ContainerLojista><Link to='/novo-produto'><ButtonLojista>Área do Logista</ButtonLojista></Link></ContainerLojista>
+          <LogoButton><Link to='/'><Logo><ImagemLogo src={logo}></ImagemLogo></Logo></Link></LogoButton>
+          <ContainerCliente><Link to='/login-cliente'><ButtonCliente>Área do Cliente</ButtonCliente></Link>
+            <Carrinho><Link to='carrinho'><CarrinhoImg src={carrinho}></CarrinhoImg></Link></Carrinho></ContainerCliente>
         </SubContainerHeader>
       </ContainerHeader>
     )
