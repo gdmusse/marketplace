@@ -13,25 +13,27 @@ const contentStyle = {
   margin: "0",
 };
 
-const MainContainer = style.div`
-    width: 80vw;
+const ColorFilter = style.div`
+    height: 8vh;
+    width: 100%;
+    background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
+    background: #E44E6D 0% 0% no-repeat padding-box;
     margin: auto;
 `
 
 const FilterContainer = style.div`
     display: flex;
+    height: 8vh;
     justify-content: space-evenly;
     align-items: center;
     width: 80vw;
-    height: 8vh;
-    background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
-    background: #E44E6D 0% 0% no-repeat padding-box;
     opacity: 1;
     color: #FFFFFF;
     font: Poppins;
     font-size: 11px;
     margin: auto;
-    font-
+    width: 80vw;
+    margin: auto;
 `;
 
 const InputDiv = style.div`
@@ -65,7 +67,7 @@ const SelectFilter = style.select`
 class SliderHome extends Component {
   render() {
     return (
-      <MainContainer>
+      <div>
         <Carousel autoplay>
           <div>
             <h3 style={contentStyle}>Lorem Ipsum</h3>
@@ -80,29 +82,33 @@ class SliderHome extends Component {
             <h3 style={contentStyle}>Lorem Ipsum</h3>
           </div>
         </Carousel>
-        <FilterContainer>
-          <InputDiv>
-            <label>Produto</label>
-            <Field placeholder="Busque pelo nome"></Field>
-          </InputDiv>
-          <InputDiv>
-            <label>Valor Min.</label>
-            <Field placeholder="Ex: 10.00"></Field>
-          </InputDiv>
-          <InputDiv>
-            <label>Valor Max.</label>
-            <Field placeholder="Ex: 100.00"></Field>
-          </InputDiv>
-          <InputDiv>
-            <label>Ordenação</label>
-            <SelectFilter name="value">
-              <option selected>Selecione</option>
-              <option value="min">Valor Min.</option>
-              <option value="max">Valor Max.</option>
-            </SelectFilter>
-          </InputDiv>
-        </FilterContainer>
-      </MainContainer>
+        
+          <ColorFilter>
+            <FilterContainer>
+              <InputDiv>
+                <label>Produto</label>
+                <Field placeholder="Busque pelo nome"></Field>
+              </InputDiv>
+              <InputDiv>
+                <label>Valor Min.</label>
+                <Field placeholder="Ex: 10.00"></Field>
+              </InputDiv>
+              <InputDiv>
+                <label>Valor Max.</label>
+                <Field placeholder="Ex: 100.00"></Field>
+              </InputDiv>
+              <InputDiv>
+                <label>Ordenação</label>
+                <SelectFilter name="value">
+                  <option selected>Selecione</option>
+                  <option value="min">Valor Min.</option>
+                  <option value="max">Valor Max.</option>
+                </SelectFilter>
+              </InputDiv>
+            </FilterContainer>
+          </ColorFilter>
+        
+      </div>
     );
   }
 }
