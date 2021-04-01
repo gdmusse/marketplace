@@ -1,36 +1,12 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import {Titulo} from '../../components'
 
 const ContainterProdutos = styled.div`
     min-height: 500px;
     width: 80vw;
     margin: auto;
-`
-
-const ContainerTitulo = styled.div`
-    margin-top: 60px;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-const Linha = styled.hr`
-    flex: auto;
-    width: auto;
-    border: 1px solid #AD2985;
-    background-color: #AD2985;
-    border-radius: 100px;
-    opacity: 0.2;
-`
-
-const Titulo =  styled.div`
-    margin-left: 15px;
-    margin-right: 15px;
-    font-weight: 500;
-    font-size: 35px;
-    color: #AD2985;
 `
 
 const ListaDeProdutos = styled.div`
@@ -43,10 +19,12 @@ const ListaDeProdutos = styled.div`
 
 const CardProduto = styled.div`
     width: 100%;
-    height: 520px;
+    height: auto;
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 5px solid white;
     :hover {
         border-bottom: 5px solid #AD2985;
     }
@@ -123,119 +101,56 @@ const BotaoAdiciconar = styled.button`
 `
 
 class ListaProdutos extends Component {
+    state = {
+        produtos: '',
+        carregandoProdutos: false,
+    }
+
+    componentDidMount () {
+        this.retornarProdutos()
+    }
+
+    retornarProdutos = () => {
+        this.setState({carregandoProdutos: true})
+        var axios = require('axios');
+
+        var config = {
+        method: 'get',
+        url: 'https://us-central1-labenu-apis.cloudfunctions.net/eloFourThree/products/',
+        headers: { }
+        };
+
+        axios(config)
+        .then(function (response) {
+            this.setState({produtos: response.data.products, carregandoProdutos:false})
+        }.bind(this))
+        .catch(function (error) {
+        console.log(error);
+        });
+    }
+
     render (){
         return(
             <ContainterProdutos>
-                <ContainerTitulo>
-                    <Linha/>
-                    <Titulo>Produtos Recentes</Titulo>
-                    <Linha/>
-                </ContainerTitulo>
                 
+                <Titulo titulo='Produtos Recentes'/>
                 <ListaDeProdutos>
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
+                    {this.state.produtos.length > 0 ?
+                        this.state.produtos.map ((produto) => (
+                            <CardProduto>
+                            <DivImagem>
+                                <ImagemProduto src={produto.photos}/>
+                                <NomeLoja>{produto.category}</NomeLoja>
+                            </DivImagem>
+                            <InfosProduto>
+                                <NomeProduto>{produto.name}</NomeProduto>
+                                <DescricaoProduto>{produto.description}</DescricaoProduto>
+                                <PrecoProduto>R${produto.price}</PrecoProduto>
+                                <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
+                            </InfosProduto>
+                        </CardProduto>
+                    )) : this.state.carregandoProdutos ? 'Carregando produtos...' : 'Nenhum produto disponível'
+                    }
                 </ListaDeProdutos>
                 
             </ContainterProdutos>
