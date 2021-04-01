@@ -48,6 +48,7 @@ const CardProduto = styled.div`
     flex-flow: column;
     align-items: center;
     padding-bottom: 20px;
+    border-bottom: 5px solid white;
     :hover {
         border-bottom: 5px solid #AD2985;
     }
@@ -124,6 +125,34 @@ const BotaoAdiciconar = styled.button`
 `
 
 class ListaProdutos extends Component {
+    state = {
+        produtos: '',
+        carregandoProdutos: false,
+    }
+
+    componentDidMount () {
+        this.retornarProdutos()
+    }
+
+    retornarProdutos = () => {
+        this.setState({carregandoProdutos: true})
+        var axios = require('axios');
+
+        var config = {
+        method: 'get',
+        url: 'https://us-central1-labenu-apis.cloudfunctions.net/eloFourThree/products/',
+        headers: { }
+        };
+
+        axios(config)
+        .then(function (response) {
+            this.setState({produtos: response.data.products, carregandoProdutos:false})
+        }.bind(this))
+        .catch(function (error) {
+        console.log(error);
+        });
+    }
+
     render (){
         return(
             <ContainterProdutos>
@@ -134,109 +163,22 @@ class ListaProdutos extends Component {
                 </ContainerTitulo>
                 
                 <ListaDeProdutos>
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
-
-                    <CardProduto>
-                        <DivImagem>
-                            <ImagemProduto src={`https://picsum.photos/400/?random`}/>
-                            <NomeLoja>Nome Loja Aqui</NomeLoja>
-                        </DivImagem>
-                        <InfosProduto>
-                            <NomeProduto>Lorem ipsum dolor</NomeProduto>
-                            <DescricaoProduto>Lorem ipsum dolor sit amet, consectetur adipiscing</DescricaoProduto>
-                            <PrecoProduto>R$ 1000,00</PrecoProduto>
-                            <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
-                        </InfosProduto>
-                    </CardProduto>
+                    {this.state.produtos.length > 0 ?
+                        this.state.produtos.map ((produto) => (
+                            <CardProduto>
+                            <DivImagem>
+                                <ImagemProduto src={produto.photos}/>
+                                <NomeLoja>{produto.category}</NomeLoja>
+                            </DivImagem>
+                            <InfosProduto>
+                                <NomeProduto>{produto.name}</NomeProduto>
+                                <DescricaoProduto>{produto.description}</DescricaoProduto>
+                                <PrecoProduto>R${produto.price}</PrecoProduto>
+                                <BotaoAdiciconar>Adicionar Produto</BotaoAdiciconar>
+                            </InfosProduto>
+                        </CardProduto>
+                    )) : this.state.carregandoProdutos ? 'Carregando produtos...' : 'Nenhum produto disponível'
+                    }
                 </ListaDeProdutos>
                 
             </ContainterProdutos>
