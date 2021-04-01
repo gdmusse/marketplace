@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import logo from '../imagens/logo/logo-colorido.png'
 import carrinho from '../imagens/icones/shopping-cart.png'
 
-// position: fixed; - para fixar no topo
 const ContainerHeader = styled.div`
 width: 100%;
 height: 15vh;
@@ -14,6 +13,8 @@ align-items: center;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 box-shadow: 0px 3px 6px #00000029;
 opacity: 1;
+position: fixed;
+z-index: 22;
 
 `
 const SubContainerHeader = styled.div`
