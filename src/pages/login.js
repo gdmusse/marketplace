@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Header, Footer, DistanciaHeader} from "../components";
+import { Header, Footer, DistanciaHeader } from "../components";
 import { Titulo } from "../components"
-import { Header, Footer } from "../components";
 import "antd/dist/antd.css";
 import { message, Button, Space } from 'antd';
 
@@ -105,27 +104,27 @@ class LoginCliente extends Component {
 
 
   render() {
+    return (
+      <div>
+        <Header />
+        <DistanciaHeader />
+        <Titulo titulo='Login' />
 
-class LoginCliente extends Component {
-    render() {
-        return (
-            <div>
-              <Header/>
-              <DistanciaHeader/>
-              <Titulo titulo='Login'/>  
-              
-                <BigContainer>
-                    <Container>
-                        <Input placeholder='Nome'></Input>
-                        <Input placeholder='Email'></Input>
-                        <ButtonLogin>Efetuar Login</ButtonLogin>
-                        <div></div>
-                        <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
-                    </Container>
-                </BigContainer>
-              <Footer/>
-            </div>
-          }
+        <BigContainer>
+          <Container>
+            <Input placeholder='Nome'></Input>
+            <Input placeholder='Email'></Input>
+            <ButtonLogin>Efetuar Login</ButtonLogin>
+            <div></div>
+            <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
+          </Container>
+        </BigContainer>
+        <Footer />
+      </div>
+    )
+
+  }
+}
 
 
 export default LoginCliente
