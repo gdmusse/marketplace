@@ -6,12 +6,14 @@ import { Titulo } from "../components"
 import "antd/dist/antd.css";
 import { message, Button, Space } from 'antd';
 
+
 const ContainerAlturaPagina = styled.div`
 min-height: 100vh;
 display: flex;
 flex-flow: column;
 justify-content: space-between;
 `
+
 
 const ButtonLogin = styled.button`
 text-transform: uppercase;
@@ -80,8 +82,6 @@ const warning = () => {
 
 
 class LoginCliente extends Component {
-
-
   render() {
     return (
       <ContainerAlturaPagina>
@@ -93,7 +93,9 @@ class LoginCliente extends Component {
           <Container>
             <Input placeholder='Nome'></Input>
             <Input placeholder='Email'></Input>
-            <ButtonLogin>Efetuar Login</ButtonLogin>
+
+            <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
+
             <div></div>
             <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
           </Container>
@@ -101,9 +103,8 @@ class LoginCliente extends Component {
         <Footer />
       </ContainerAlturaPagina>
     )
-
   }
-}
 
+}
 
 export default LoginCliente
