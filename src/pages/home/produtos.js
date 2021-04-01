@@ -114,8 +114,7 @@ const FilterContainer = styled.div`
   width: 80vw;
   opacity: 1;
   color: #ffffff;
-  font: Poppins;
-  font-size: 11px;
+  font-size: 14px;
   margin: auto;
   width: 80vw;
   margin: auto;

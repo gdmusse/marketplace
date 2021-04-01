@@ -77,7 +77,7 @@ border: none;
 margin-left: 10px;
 `
 const warning = () => {
-  message.warning('Esse Login é apenas umas simulação');
+  message.warning('Esse Login é apenas uma simulação');
 };
 
 
