@@ -10,7 +10,7 @@ import Whats  from '.././imagens/icones/whats.png'
 
 const CorFooter = styled.div`
     background-color: #4A2F87;     
-    height: 250px;     
+    min-height: auto;     
     width: 100%; 
     display: flex;
     justify-content: center;
@@ -18,17 +18,19 @@ const CorFooter = styled.div`
 `      
 
 const ContainerFooter = styled.div`
-    width: 45vw;
+    width: 35vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
 
 const ImagensFooter = styled.div`
-    width: 200px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 `
 const LogoFooter = styled.img`
-    width: 200px;
+    width: 150px;
 `
 const DivIcones = styled.div`
     display: flex;
@@ -36,17 +38,18 @@ const DivIcones = styled.div`
     margin-top: 20px;
 `
 const Icones = styled.img`
+    width: 25px;
 `
 const ContainerPaginas = styled.div`
     display: grid;
     grid-column-gap: 15px;
     grid-row-gap: 10px;
     grid-template-columns: auto auto auto;
-    width: 400px;
-    height: 150px;
+    width: auto;
+    height: auto;
 `
 const BotaoPaginas = styled.button`
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
     border: none;
     background-color: transparent;
@@ -59,7 +62,7 @@ const BotaoPaginas = styled.button`
 `
 const CorCreditos = styled.div`
     background-color: #372365;
-    height: 45px;
+    height: 33px;
     width: 100%;
     `
 
@@ -69,10 +72,11 @@ const ContainerCreditos = styled.div`
     text-align: center;
     color: white;
     justify-content: center;
-    height: 45px;
+    height: 33px;
 
 `
 const TextoCreditos = styled.div`
+    font-size: 12px;
 `
 
 class Footer extends Component {
@@ -84,8 +88,8 @@ class Footer extends Component {
                     <ImagensFooter> 
                         <LogoFooter src={Logo}/>
                         <DivIcones>
-                            <Icones src= {Face}/>
                             <Icones src={Insta}/>
+                            <Icones src= {Face}/>
                             <Icones src={Twitter}/>
                             <Icones src={Whats}/>
                         </DivIcones>
@@ -104,7 +108,7 @@ class Footer extends Component {
                 <CorCreditos>
                     <ContainerCreditos>
                         <TextoCreditos>
-                        <b>Desenvolvido por</b> Bea, Cacau, Jatobá, Madu e Musse
+                        Desenvolvido por Bea, Cacau, Jatobá, Madu e Musse
                         </TextoCreditos>
                     </ContainerCreditos>   
                 </CorCreditos>
