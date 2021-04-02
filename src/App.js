@@ -67,7 +67,7 @@ class App extends Component {
     this.setState({ produtosNoCarrinho: 0 });
 
     const warning = () => {
-      message.warning("Finalizar compra é apenas uma simulação");
+      message.warning("Realizar pagamento é apenas uma simulação");
     };
     warning();
   };

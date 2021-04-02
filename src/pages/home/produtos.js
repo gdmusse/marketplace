@@ -74,6 +74,7 @@ const DescricaoProduto = styled.label`
   color: #202020;
   text-align: center;
   font-size: 18px;
+  word-break: break-all;
 `;
 
 const PrecoProduto = styled.label`
@@ -292,7 +293,7 @@ class ListaProdutos extends Component {
                 value={this.state.categoria}
                 onChange={this.onChangeCategoria}
               >
-                <option selected>Selecione</option>
+                <option value ={""}>Todas</option>
                 <option value={"Equilibrion"}>Equilibrion Fitness</option>
                 <option value={"LNDN"}>LNDN Eyewear</option>
                 <option value={"LoucaDasPlantas"}>Louca das Plantas</option>
