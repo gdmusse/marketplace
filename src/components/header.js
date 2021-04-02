@@ -154,8 +154,8 @@ class Header extends Component {
           <LogoButton><Link to='/'><Logo><ImagemLogo src={logo}></ImagemLogo></Logo></Link></LogoButton>
           <ContainerCliente><Link to='/login-cliente'><ButtonCliente>Área do Cliente</ButtonCliente></Link>
           
-          <Carrinho><Link to='carrinho'><CarrinhoImg src={carrinho}></CarrinhoImg></Link>
-                    <ContadorCarrinho>{this.props.produtosNoCarrinho}</ContadorCarrinho>
+          <Carrinho><Link to='carrinho'><CarrinhoImg src={carrinho}></CarrinhoImg>
+                    <ContadorCarrinho>{this.props.produtosNoCarrinho}</ContadorCarrinho></Link>
           </Carrinho>
           
           </ContainerCliente>
