@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Elo4Bannner from "../../imagens/banners/elo4.png";
-import Cosmetic from "../../imagens/banners/cosmetic.png";
-import Botanical from "../../imagens/banners/botanical.png";
-import Eyewear from "../../imagens/banners/eyewear.png";
-import Fitness from "../../imagens/banners/fitness.png"
+import Elo4Bannner from "../../imagens/banners/Slider2.png";
+import Cosmetic from "../../imagens/banners/Slider1.png";
+import Botanical from "../../imagens/banners/Slider3.png";
+import Eyewear from "../../imagens/banners/Slider4.png";
+import Fitness from "../../imagens/banners/Slider5.png"
 import styled from "styled-components";
 import "antd/dist/antd.css";
 import { Carousel } from "antd";
 
 const contentStyle = {
   width: "100%",
-  height: "90vh",
+  height: "70vh",
   color: "#000",
   lineHeight: "60vh",
   textAlign: "center",
@@ -33,32 +33,32 @@ class SliderHome extends Component {
         <Carousel autoplay>
           <div>
             <Link to="/cadastro-cliente">
-              <BannerImage src={Elo4Bannner} alt="banner_elo4" style={contentStyle}/>
+              <BannerImage src={Elo4Bannner} alt="banner_elo4" style={contentStyle} />
             </Link>
           </div>
           <div>
             <Link to="/cadastro-cliente">
-              <BannerImage src={Cosmetic} alt="cosmetic-banner" style={contentStyle}/>
+              <BannerImage src={Cosmetic} alt="cosmetic-banner" style={contentStyle} />
             </Link>
           </div>
           <div>
             <Link to="/cadastro-cliente">
-              <BannerImage src={Botanical} alt="botanical-banner" style={contentStyle}/>
+              <BannerImage src={Botanical} alt="botanical-banner" style={contentStyle} />
             </Link>
           </div>
           <div>
             <Link to="/cadastro-cliente">
-              <BannerImage src={Eyewear} alt="eyewear-banner" style={contentStyle}/>
+              <BannerImage src={Eyewear} alt="eyewear-banner" style={contentStyle} />
             </Link>
           </div>
           <div>
             <Link to="/cadastro-cliente">
-              <BannerImage src={Fitness} alt="fitness-banner" style={contentStyle}/>
+              <BannerImage src={Fitness} alt="fitness-banner" style={contentStyle} />
             </Link>
           </div>
         </Carousel>
-        
-        
+
+
       </div>
     );
   }
