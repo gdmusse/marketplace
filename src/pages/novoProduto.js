@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Header, Footer, DistanciaHeader } from "../components";
+import { Header, Footer, DistanciaHeader } from "../components"
 import { Titulo } from "../components"
+import axios from 'axios'
 import styled from 'styled-components'
 
 const MainContainer = styled.div`
@@ -107,18 +108,136 @@ color: #E44E6D;
 const Letter = styled.p`
   color: #4A2F87;
   `
-
 const ImgDiv = styled.div`
-  width: 200px;
-  height: 200px;
-  background-color: #E44E6D;
- 
-  `
+    width: 200px;
+    height: 200px;
+    background-color: #E44E6D;
+`
 const Img = styled.img`
-  
-  `
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`
 class NovoProduto extends Component {
+    state = {
+        productName: "",
+        prodDescription: "",
+        prodPrice: 0,
+        payMeth: "",
+        store: "",
+        prodImg: [],
+        prodInstallments:0
+    };
+
+    handleName = (e) => {
+        this.setState({productName: e.target.value });
+    };
+
+    handleDescription= (e) => {
+        this.setState({prodDescription: e.target.value})
+    }
+
+    handlePrice= (e) => {
+        this.setState({prodPrice: Number(e.target.value)})
+    }
+
+    handlePay= (e) => {
+        this.setState({payMeth: e.target.value})
+    }
+
+    handleStore= (e) => {
+        this.setState({store: e.target.value})
+    }
+
+    handleImg= (e) => {
+        this.setState({prodImg: e.target.value})
+    }
+
+    handleInstallments= (e) => {
+        this.setState({prodInstallments: Number(e.target.value)})
+    }
+
+    addProduct = () => {
+        var axios = require('axios');
+        var data = JSON.stringify({
+            name: this.state.productName,
+            description: this.state.prodDescription,
+            price: Number(this.state.prodPrice),
+            paymentMethod:this.state.payMeth,
+            category: this.state.store,
+            photos: [this.state.prodImg],
+            installments: Number(this.state.prodInstallments)
+        });
+        console.log(data)
+
+        var config = {
+        method: 'post',
+        url: 'https://us-central1-labenu-apis.cloudfunctions.net/eloFourThree/products',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+
+        axios(config)
+        .then(function (response) {
+            this.setState({productName: ''})
+            this.setState({prodDescription: ''})
+            this.setState({prodPrice: ''})
+            this.setState({payMeth: ''})
+            this.setState({store: ''})
+            this.setState({prodImg: ''})
+            this.setState({prodInstallments: ''})
+            alert("Cadastro realizado com Sucesso")
+        }.bind(this))
+        
+        .catch(function (error) {
+            alert("Cadastro Invalido! Preencha Corretamente todos os Campos")
+            console.log(error);
+        });
+
+    //     const body = {
+    //         name: this.state.productName,
+    //         description: this.state.prodDescription,
+    //         price: this.state.prodPrice,
+    //         paymentMethod:this.state.payMeth,
+    //         category: this.state.store,
+    //         photos: this.state.prodImg,
+    //         installments: this.state.prodInstallments
+    //     };
+    //     console.log(body)
+    //     axios
+    //         .post(
+    //         "https://us-central1-labenu-apis.cloudfunctions.net/eloFourThree/products",
+    //         body,
+    //         {
+    //             headers:{}
+    //         }
+    //         )
+    //         .then((res) => {
+    //             this.setState({productName: ''})
+    //             this.setState({prodDescription: ''})
+    //             this.setState({prodPrice: ''})
+    //             this.setState({payMeth: ''})
+    //             this.setState({store: ''})
+    //             this.setState({prodImg: ''})
+    //             this.setState({prodInstallments: ''})
+    //             console.log(res)
+    //             alert("Cadastro realizado com Sucesso")
+    //         })
+    //         .catch((err) => {
+    //             this.setState({productName: ''})
+    //             this.setState({prodDescription: ''})
+    //             this.setState({prodPrice: ''})
+    //             this.setState({payMeth: ''})
+    //             this.setState({store: ''})
+    //             this.setState({prodImg: ''})
+    //             this.setState({prodInstallments: ''})
+    //             console.log(err)
+    //             alert("Cadastro Invalido! Preencha Corretamente todos os Campos")
+    //         });
+    };
+
     render() {
         return (
             <ContainerAlturaPagina>
@@ -131,42 +250,69 @@ class NovoProduto extends Component {
                     <Container>
                         <ContainerInput1>
                             <Letter>Loja</Letter>
-                            <Input placeholder='Nome da Loja'></Input>
+                            <Select
+                                value={this.state.store}
+                                onChange={this.handleStore}
+                            >
+                                <option value={""}>
+                                    Selecione
+                                </option>
+                                <option  value={"Equilibrion"}>
+                                    Equilibrion Fitness
+                                </option>
+                                <option value={"LNDN"}>
+                                    LNDN Eyewear
+                                </option>
+                                <option value={"LoucaDasPlantas"}>
+                                    Louca das Plantas
+                                </option>
+                                <option value={"MariaBonita"}>
+                                    Maria Bonita
+                                </option>
+                            </Select>
                             <Letter>Descrição</Letter>
-                            <Input placeholder='Ex: Vaso de ceramica medio'></Input>
+                            <Input placeholder='Ex: Vaso de ceramica medio' value={this.state.prodDescription} onChange={this.handleDescription}></Input>
                             <Letter>Formas de Pagamento</Letter>
-                            <Select>
-                                <option value={""}></option>
-                                <option value={"Cartao"} >Cartão </option>
+                            <Select
+                                value={this.state.payMeth}
+                                onChange={this.handlePay}
+                            >
+                                <option value={""}>Selecione</option>
+                                <option value={"Cartão"}>Cartão </option>
                                 <option value={"Dinheiro"}>Dinheiro</option>
                             </Select>
                         </ContainerInput1>
 
                         <ContainerInput2>
                             <Letter>Nome do Produto</Letter>
-                            <Input placeholder="Ex: Vaso Feliz"></Input>
+                            <Input placeholder="Ex: Vaso Feliz" value={this.state.productName} onChange={this.handleName}></Input>
                             <Letter>Preço</Letter>
-                            <Input placeholder="Ex: 99,99"></Input>
+                            <Input placeholder="Ex: 99,99" value={this.state.prodPrice} onChange={this.handlePrice}></Input>
                             <Letter>Número de Parcelas</Letter>
-                            <Select>
-                                <option value={""}></option>
-                                <option value={"parcela1"} >1x </option>
-                                <option value={"parcela2"}>2x</option>
-                                <option value={"parcela3"}>3x</option>
-                                <option value={"parcela4"}>4x </option>
-                                <option value={"parcela5"}>5x</option>
-                                <option value={"parcela6"}>6x</option>
+                            <Select
+                                value={this.state.prodInstallments}
+                                onChange={this.handleInstallments}
+                            >
+                                <option value={0}>Selecione</option>
+                                <option value={1}>1x</option>
+                                <option value={2}>2x</option>
+                                <option value={3}>3x</option>
+                                <option value={4}>4x</option>
+                                <option value={5}>5x</option>
+                                <option value={6}>6x</option>
                             </Select>
                         </ContainerInput2>
                         <ContainerInput3>
                             <Letter>Imagem</Letter>
-                            <Input placeholder='Link da Imagem'></Input>
-                            <ImgDiv><Img></Img></ImgDiv>
+                            <Input placeholder='Link da Imagem' value={this.state.prodImg} onChange={this.handleImg}></Input>
+                            <ImgDiv>
+                                <Img src={this.state.prodImg} />
+                            </ImgDiv>
                         </ContainerInput3>
                     </Container>
                 </MainContainer>
                 <ButtonFlex>
-                    <ButtonLojista>Publicar Produto</ButtonLojista>
+                    <ButtonLojista onClick = {(this.addProduct)}>Publicar Produto</ButtonLojista>
                 </ButtonFlex>
                 <Footer />
             </ContainerAlturaPagina>
