@@ -32,10 +32,10 @@ class App extends Component {
       novoCarrinho.push(novoProduto);
     }
     this.setState({ carrinho: novoCarrinho });
-    console.log(this.state.produtosNoCarrinho)
+    console.log(this.state.produtosNoCarrinho);
   };
 
-    removerProduto = (produto) => {
+  removerProduto = (produto) => {
     var aux = this.state.produtosNoCarrinho;
     this.setState({ produtosNoCarrinho: aux - 1 });
 
@@ -53,7 +53,7 @@ class App extends Component {
 
     this.setState({ carrinho: novoCarrinho });
 
-    console.log(this.state.produtosNoCarrinho)
+    console.log(this.state.produtosNoCarrinho);
   };
 
   totalCarrinho = () => {
@@ -64,7 +64,7 @@ class App extends Component {
 
   realizarPagamento = () => {
     this.setState({ carrinho: [] });
-    this.setState({ produtosNoCarrinho: [] });
+    this.setState({ produtosNoCarrinho: 0 });
 
     const warning = () => {
       message.warning("Finalizar compra é apenas uma simulação");
