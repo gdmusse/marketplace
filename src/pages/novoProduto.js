@@ -222,8 +222,8 @@ class NovoProduto extends Component {
               </Select>
               <Letter>Descrição</Letter>
               <Input
-                minLength="35"
-                maxLength="50"
+                minLength="1"
+                maxLength="25"
                 placeholder="Ex: Vaso de ceramica medio"
                 value={this.state.prodDescription}
                 onChange={this.handleDescription}
