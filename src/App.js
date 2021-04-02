@@ -13,7 +13,7 @@ import { message, Button, Space } from "antd";
 
 class App extends Component {
   state = {
-    produtosNoCarrinho: [],
+    produtosNoCarrinho: 0,
     carrinho: [],
   };
 
@@ -32,22 +32,28 @@ class App extends Component {
       novoCarrinho.push(novoProduto);
     }
     this.setState({ carrinho: novoCarrinho });
+    console.log(this.state.produtosNoCarrinho)
   };
 
-  removerProduto = (produtoId) => {
-    /* Para remover, a função precisa buscar todo o objeto, somente o id */
-    var aux = [...this.state.carrinho];
-    aux.map((produto, i) => {
-      if (produto.id === produtoId) {
-        var quantidade = produto.quantidade;
-        if (quantidade - 1 == 0) {
-          aux.splice(i, 1);
-        } else {
-          aux[i].quantidade--;
-        }
-      }
+    removerProduto = (produto) => {
+    var aux = this.state.produtosNoCarrinho;
+    this.setState({ produtosNoCarrinho: aux - 1 });
+
+    const indiceProduto = this.state.carrinho.findIndex((item) => {
+      return item.id === produto.id;
     });
-    this.setState({ carrinho: aux });
+
+    const novoCarrinho = [...this.state.carrinho];
+
+    if (this.state.carrinho[indiceProduto].quantidade === 1) {
+      novoCarrinho.splice(indiceProduto, 1);
+    } else {
+      novoCarrinho[indiceProduto].quantidade--;
+    }
+
+    this.setState({ carrinho: novoCarrinho });
+
+    console.log(this.state.produtosNoCarrinho)
   };
 
   totalCarrinho = () => {
@@ -76,7 +82,7 @@ class App extends Component {
             render={(props) => (
               <Home
                 {...props}
-                produtosNoCarrinho={this.state.carrinho}
+                produtosNoCarrinho={this.state.produtosNoCarrinho}
                 carrinho={this.state.carrinho}
                 adicionarProduto={this.adicionarProduto}
                 removerProduto={this.removerProduto}
@@ -88,7 +94,7 @@ class App extends Component {
             render={(props) => (
               <CadastroCliente
                 {...props}
-                produtosNoCarrinho={this.state.carrinho}
+                produtosNoCarrinho={this.state.produtosNoCarrinho}
                 carrinho={this.state.carrinho}
               />
             )}
@@ -98,7 +104,7 @@ class App extends Component {
             render={(props) => (
               <Carrinho
                 {...props}
-                produtosNoCarrinho={this.state.carrinho}
+                produtosNoCarrinho={this.state.produtosNoCarrinho}
                 carrinho={this.state.carrinho}
                 adicionarProduto={this.adicionarProduto}
                 removerProduto={this.removerProduto}
@@ -112,7 +118,7 @@ class App extends Component {
             render={(props) => (
               <LoginCliente
                 {...props}
-                produtosNoCarrinho={this.state.carrinho}
+                produtosNoCarrinho={this.state.produtosNoCarrinho}
                 carrinho={this.state.carrinho}
               />
             )}
@@ -122,7 +128,7 @@ class App extends Component {
             render={(props) => (
               <NovoProduto
                 {...props}
-                produtosNoCarrinho={this.state.carrinho}
+                produtosNoCarrinho={this.state.produtosNoCarrinho}
                 carrinho={this.state.carrinho}
               />
             )}
@@ -134,22 +140,3 @@ class App extends Component {
 }
 
 export default App;
-
-// AddProdutoNoCarrinho = (produtoId) =>{
-// 	const produtoNoCarrinho = this.state.produtosNoCarrinho.fing(produto => produtoId === produto.id)
-
-// 	if(produtoNoCarrinho) {
-// 		const novoProdutoNoCarrinho = this.state.produtosNoCarrinho.map(produto => {
-// 			if(produtoId === produto.id){
-// 				return {
-// 					...produto,
-// 					quantidade: produto.quantidade + 1
-// 				}
-// 			}
-// 			return produto
-// 		});
-// 		this.setState({produtosNoCarrinho: novoProdutoNoCarrinho})
-// 	} else {
-// 		const produtoParaAdd = this.state.listaDeProdutos.find(produto => produtoId === produto.id)
-// 		const novoProdu
-// 	}
