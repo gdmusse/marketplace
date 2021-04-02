@@ -296,7 +296,7 @@ class Carrinho extends Component {
                 <Coluna6>
                   <DivBotoes>
                     <BotaoAdicionar onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdicionar>
-                    <BotaoRemover onClick={() => this.props.removerProduto(produto.id)} >
+                    <BotaoRemover onClick={() => this.props.removerProduto(produto)} >
                       <ImagensBotoes src={trash}></ImagensBotoes>
                       <ImagensBotoesHover src={trashwhite}></ImagensBotoesHover>
                     </BotaoRemover>
@@ -312,7 +312,7 @@ class Carrinho extends Component {
               <DivInformacoesTotal>
                 <DivInfosTextoValor>
                   <DivTextoTotal>Total</DivTextoTotal>
-                  <DivValorTotal>R$: {this.props.totalCarrinho()}</DivValorTotal>
+                  <DivValorTotal>R$ {this.props.totalCarrinho()}</DivValorTotal>
                 </DivInfosTextoValor>
                 <QuebraLinha />
                 <BotaoFinalizar onClick={() => this.props.realizarPagamento()}>Realizar pagamento</BotaoFinalizar>

@@ -34,6 +34,9 @@ color: #E44E6D;
   color: white;
   transition: 150ms;
 }
+:focus {
+    outline: none;
+  }
 `
 const Container = styled.div`
 width: 599px;

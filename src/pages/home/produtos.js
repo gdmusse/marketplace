@@ -97,6 +97,9 @@ const BotaoAdiciconar = styled.button`
     color: white;
     cursor: pointer;
   }
+  :focus {
+    outline: none;
+  }
 `;
 const ColorFilter = styled.div`
   height: 13vh;

@@ -15,15 +15,12 @@ const contentStyle = {
   lineHeight: "60vh",
   textAlign: "center",
   margin: "auto",
-  background: "green"
+  background: "transparent"
 };
-
 
 const BannerImage = styled.img`
   object-fit: cover;
 `
-
-
 
 class SliderHome extends Component {
   render() {
