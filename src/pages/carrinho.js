@@ -6,6 +6,7 @@ import trashwhite from "../imagens/icones/trash-white.png";
 import { Header, Footer, DistanciaHeader} from "../components";
 import { Titulo } from "../components"
 
+
 const CarrinhoVazio = styled.p`
     color: black;
     font: normal normal normal 20px/36px Raleway;    
@@ -250,6 +251,8 @@ const QuebraLinha = styled.hr`
   width: 90%;
   opacity: 0.2;
 `;
+
+
 class Carrinho extends Component {
   render() {
     return (
@@ -309,10 +312,10 @@ class Carrinho extends Component {
               <DivInformacoesTotal>
                 <DivInfosTextoValor>
                   <DivTextoTotal>Total</DivTextoTotal>
-                  <DivValorTotal>R$ 500</DivValorTotal>
+                  <DivValorTotal>R$: {this.props.totalCarrinho()}</DivValorTotal>
                 </DivInfosTextoValor>
                 <QuebraLinha />
-                <BotaoFinalizar>Realizar pagamento</BotaoFinalizar>
+                <BotaoFinalizar onClick={() => this.props.realizarPagamento()}>Realizar pagamento</BotaoFinalizar>
               </DivInformacoesTotal>
             </DivTotal>
           </ContainerCarrinho>
