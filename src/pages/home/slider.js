@@ -11,7 +11,6 @@ import { Carousel } from "antd";
 
 const contentStyle = {
   width: "100%",
-  height: "70vh",
   color: "#000",
   lineHeight: "60vh",
   textAlign: "center",
@@ -21,7 +20,7 @@ const contentStyle = {
 
 
 const BannerImage = styled.img`
-  width: auto;
+  object-fit: cover;
 `
 
 
@@ -32,29 +31,19 @@ class SliderHome extends Component {
       <div>
         <Carousel autoplay>
           <div>
-            <Link to="/cadastro-cliente">
               <BannerImage src={Elo4Bannner} alt="banner_elo4" style={contentStyle} />
-            </Link>
           </div>
           <div>
-            <Link to="/cadastro-cliente">
               <BannerImage src={Cosmetic} alt="cosmetic-banner" style={contentStyle} />
-            </Link>
           </div>
           <div>
-            <Link to="/cadastro-cliente">
               <BannerImage src={Botanical} alt="botanical-banner" style={contentStyle} />
-            </Link>
           </div>
           <div>
-            <Link to="/cadastro-cliente">
               <BannerImage src={Eyewear} alt="eyewear-banner" style={contentStyle} />
-            </Link>
           </div>
           <div>
-            <Link to="/cadastro-cliente">
               <BannerImage src={Fitness} alt="fitness-banner" style={contentStyle} />
-            </Link>
           </div>
         </Carousel>
 
