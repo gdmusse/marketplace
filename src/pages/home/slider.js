@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Elo4Bannner from "../../imagens/banners/Slider2.png";
-import Cosmetic from "../../imagens/banners/Slider1.png";
+import Elo4Bannner from "../../imagens/banners/Slider1.png";
+import Cosmetic from "../../imagens/banners/Slider2.png";
 import Botanical from "../../imagens/banners/Slider3.png";
 import Eyewear from "../../imagens/banners/Slider4.png";
 import Fitness from "../../imagens/banners/Slider5.png"
@@ -22,11 +22,22 @@ const BannerImage = styled.img`
   object-fit: cover;
 `
 
+const CarouselWrapper = styled(Carousel)`
+  > .slick-dots li button {
+
+    background: #4A2F87;
+  }
+  > .slick-dots li.slick-active button {
+    background: #E44E6D;
+
+  }
+`;
+
 class SliderHome extends Component {
   render() {
     return (
       <div>
-        <Carousel autoplay>
+        <CarouselWrapper autoplay>
           <div>
               <BannerImage src={Elo4Bannner} alt="banner_elo4" style={contentStyle} />
           </div>
@@ -42,7 +53,7 @@ class SliderHome extends Component {
           <div>
               <BannerImage src={Fitness} alt="fitness-banner" style={contentStyle} />
           </div>
-        </Carousel>
+        </CarouselWrapper>
 
 
       </div>
