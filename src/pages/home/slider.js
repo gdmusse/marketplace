@@ -10,7 +10,8 @@ import "antd/dist/antd.css";
 import { Carousel } from "antd";
 
 const contentStyle = {
-  height: "80vh",
+  width: "100%",
+  height: "90vh",
   color: "#000",
   lineHeight: "60vh",
   textAlign: "center",
@@ -20,7 +21,7 @@ const contentStyle = {
 
 
 const BannerImage = styled.img`
-  width: 80vw;
+  width: auto;
 `
 
 

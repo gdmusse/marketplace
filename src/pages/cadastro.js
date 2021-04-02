@@ -201,8 +201,10 @@ class CadastroCliente extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <ContainerTitulo><DivTitulo>Cadastro de Clientes</DivTitulo></ContainerTitulo>
+                <Header produtosNoCarrinho={this.props.produtosNoCarrinho}  />
+                <DistanciaHeader />
+                <Titulo titulo='Login' />
+                
                 <SignUP>
                     <Row>
                         <Col span={24}><InputNome placeholder='Nome Completo'></InputNome></Col>

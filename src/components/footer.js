@@ -18,10 +18,12 @@ const CorFooter = styled.div`
 `
 
 const ContainerFooter = styled.div`
-    width: 35vw;
+    width: 50vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 `
 
 const ImagensFooter = styled.div`
@@ -35,16 +37,13 @@ const LogoFooter = styled.img`
 const DivIcones = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
 `
 const Icones = styled.img`
-    width: 25px;
-`
+    width: 25px;`
+
 const ContainerPaginas = styled.div`
-    display: grid;
-    grid-column-gap: 15px;
-    grid-row-gap: 10px;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-flow: column;
     width: auto;
     height: auto;
 `
@@ -56,6 +55,8 @@ const BotaoPaginas = styled.button`
     outline: none;
     color: white;
     opacity: 1;
+    margin-top: 1px;
+    margin-bottom: 1px;
     :hover {
         opacity: .8;
         cursor: pointer;
@@ -85,26 +86,27 @@ class Footer extends Component {
         return (
             <div>
                 <CorFooter>
+                    
                     <ContainerFooter>
+                        
+                        <ContainerPaginas>
+                                <Link to='/'><BotaoPaginas>Home</BotaoPaginas></Link>
+                                <Link to='novo-produto'><BotaoPaginas>Área Lojista</BotaoPaginas></Link>
+                                <Link to='login-cliente'><BotaoPaginas>Área do Cliente</BotaoPaginas></Link>
+                            </ContainerPaginas>
+
+                        <LogoFooter src={Logo} />
+                        
                         <ImagensFooter>
-                            <LogoFooter src={Logo} />
                             <DivIcones>
                                 <Icones src={Insta} />
                                 <Icones src={Face} />
                                 <Icones src={Twitter} />
                                 <Icones src={Whats} />
                             </DivIcones>
-                        </ImagensFooter>
-                        <ContainerPaginas>
-                            <Link to='/'><BotaoPaginas>Home</BotaoPaginas></Link>
-                            <BotaoPaginas>Loja 1</BotaoPaginas>
-                            <BotaoPaginas>Loja 3</BotaoPaginas>
-                            <Link to='novo-produto'><BotaoPaginas>Área Lojista</BotaoPaginas></Link>
-                            <BotaoPaginas>Loja 2</BotaoPaginas>
-                            <BotaoPaginas>Loja 4</BotaoPaginas>
-                            <Link to='login-cliente'><BotaoPaginas>Área do Cliente</BotaoPaginas></Link>
-                        </ContainerPaginas>
+                        </ImagensFooter>                       
                     </ContainerFooter>
+                
                 </CorFooter>
                 <CorCreditos>
                     <ContainerCreditos>

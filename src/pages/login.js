@@ -6,14 +6,12 @@ import { Titulo } from "../components"
 import "antd/dist/antd.css";
 import { message, Button, Space } from 'antd';
 
-
 const ContainerAlturaPagina = styled.div`
 min-height: 100vh;
 display: flex;
 flex-flow: column;
 justify-content: space-between;
 `
-
 
 const ButtonLogin = styled.button`
 text-transform: uppercase;
@@ -85,9 +83,9 @@ class LoginCliente extends Component {
   render() {
     return (
       <ContainerAlturaPagina>
-        <Header />
+        <Header produtosNoCarrinho={this.props.produtosNoCarrinho} />
         <DistanciaHeader />
-        <Titulo titulo='Login' />
+        <Titulo titulo='Login'/>
 
         <BigContainer>
           <Container>
@@ -97,7 +95,7 @@ class LoginCliente extends Component {
             <ButtonLogin onClick={warning}>Efetuar Login</ButtonLogin>
 
             <div></div>
-            <Cadastrar>Ainda não é cadastrado?</Cadastrar><Link to="/cadastro-cliente"><CadastrarBold>Clique Aqui!</CadastrarBold></Link>
+            <Cadastrar>Ainda não é cadastrado?</Cadastrar><CadastrarBold onClick={warning}>Clique Aqui!</CadastrarBold>
           </Container>
         </BigContainer>
         <Footer />

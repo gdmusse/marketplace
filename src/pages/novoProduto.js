@@ -122,7 +122,7 @@ class NovoProduto extends Component {
     render() {
         return (
             <ContainerAlturaPagina>
-                <Header />
+                <Header produtosNoCarrinho={this.props.produtosNoCarrinho} />
                 <ContainerTitulo>
                     <DistanciaHeader />
                     <Titulo titulo='Novo Produto' />
