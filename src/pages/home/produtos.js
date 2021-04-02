@@ -137,7 +137,7 @@ const Field = styled.input`
   ::placeholder {
     color: #ffffff;
   }
-  :focus { 
+  :focus {
     opacity: 1;
   }
 `;
@@ -151,13 +151,12 @@ const SelectFilter = styled.select`
   color: #ffffff;
   width: 12vw;
   opacity: 0.3;
-
 `;
 
 const TituloFiltro = styled.label`
   font-size: 17px;
   margin-bottom: 7px;
-`
+`;
 
 class ListaProdutos extends Component {
   state = {
@@ -168,6 +167,7 @@ class ListaProdutos extends Component {
     inputValorMax: "",
     inputBuscaNome: "",
     sort: "",
+    categoria: "",
   };
   componentDidMount() {
     this.retornarProdutos();
@@ -200,6 +200,14 @@ class ListaProdutos extends Component {
 
   FiltrarLista = () => {
     return this.state.produtos
+      .filter((produto) => {
+        const categoriaProduto = produto.category.toLowerCase();
+        if (categoriaProduto.includes(this.state.categoria.toLowerCase())) {
+          return true;
+        } else {
+          return false;
+        }
+      })
       .filter((produto) => {
         if (
           this.state.inputValorMin === "" ||
@@ -263,6 +271,10 @@ class ListaProdutos extends Component {
     this.setState({ sort: event.target.value });
   };
 
+  onChangeCategoria = (event) => {
+    this.setState({ categoria: event.target.value });
+  };
+
   render() {
     let listaFiltrada = this.FiltrarLista();
 
@@ -270,15 +282,18 @@ class ListaProdutos extends Component {
       <div>
         <ColorFilter>
           <FilterContainer>
-            
             <InputDiv>
               <TituloFiltro>Loja</TituloFiltro>
-            <SelectFilter>
+              <SelectFilter
+                name="value"
+                value={this.state.categoria}
+                onChange={this.onChangeCategoria}
+              >
                 <option selected>Selecione</option>
-                <option>Equilibrion Fitness</option>
-                <option>LNDN Eyewear</option>
-                <option>Louca das Plantas</option>
-                <option>Maria Bonita</option>
+                <option value={"Equilibrion"}>Equilibrion Fitness</option>
+                <option value={"LNDN"}>LNDN Eyewear</option>
+                <option value={"LoucaDasPlantas"}>Louca das Plantas</option>
+                <option value={"MariaBonita"}>Maria Bonita</option>
               </SelectFilter>
             </InputDiv>
 
@@ -340,7 +355,11 @@ class ListaProdutos extends Component {
                       <NomeProduto>{produto.name}</NomeProduto>
                       <DescricaoProduto>{produto.description}</DescricaoProduto>
                       <PrecoProduto>R${produto.price}</PrecoProduto>
-                      <BotaoAdiciconar  onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdiciconar>
+                      <BotaoAdiciconar
+                        onClick={() => this.props.adicionarProduto(produto)}
+                      >
+                        Adicionar Produto
+                      </BotaoAdiciconar>
                     </InfosProduto>
                   </CardProduto>
                 ))
