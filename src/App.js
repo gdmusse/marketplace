@@ -3,9 +3,6 @@ import './App.css';
 import {Home, CadastroCliente, Carrinho, LoginCliente, NovoProduto} from './pages'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-
-
-
 class App extends Component {
 	
 	state = {
@@ -30,17 +27,32 @@ class App extends Component {
 		  this.setState({ carrinho: novoCarrinho });
 	};
 
+	removerProduto = (produtoId) => { /* Para remover, a função precisa buscar todo o objeto, somente o id */
+		var aux = [... this.state.carrinho]
+		aux.map((produto, i) =>  {
+			if(produto.id === produtoId) {
+				var quantidade = produto.quantidade
+				if(quantidade - 1 == 0) {
+					aux.splice(i, 1)
+				} else {
+					aux[i].quantidade--
+				}
+			} 
+		})	
+		this.setState({carrinho: aux})
+	}
+
 
 	render () {
 
 		return (
 			<Router>
 				<Switch>
-					<Route path='/' exact render={(props) => <Home {...props} produtosNoCarrinho={this.state.produtosNoCarrinho} carrinho={this.state.carrinho} adicionarProduto={this.adicionarProduto} />} />
-					<Route path='/cadastro-cliente' component={CadastroCliente} />
-					<Route path='/carrinho'  render={(props) => <Carrinho {...props} produtosNoCarrinho={this.state.produtosNoCarrinho} carrinho={this.state.carrinho} />}  />
-					<Route path='/login-cliente'/>
-					<Route path='/novo-produto' component={NovoProduto} />
+					<Route path='/' exact render={(props) => <Home {...props} produtosNoCarrinho={this.state.carrinho} carrinho={this.state.carrinho} adicionarProduto={this.adicionarProduto} removerProduto={this.removerProduto} />} />
+					<Route path='/cadastro-cliente' render={(props) => <CadastroCliente {...props} produtosNoCarrinho={this.state.carrinho} carrinho={this.state.carrinho} />} />
+					<Route path='/carrinho'  render={(props) => <Carrinho {...props} produtosNoCarrinho={this.state.carrinho} carrinho={this.state.carrinho} adicionarProduto={this.adicionarProduto} removerProduto={this.removerProduto} />}  />
+					<Route path='/login-cliente' render={(props) => <LoginCliente {...props} produtosNoCarrinho={this.state.carrinho} carrinho={this.state.carrinho} />} />
+					<Route path='/novo-produto' render={(props) => <NovoProduto {...props} produtosNoCarrinho={this.state.carrinho} carrinho={this.state.carrinho} />}/>
 				</Switch>
 			</Router>
 		)		

@@ -6,11 +6,21 @@ import trashwhite from "../imagens/icones/trash-white.png";
 import { Header, Footer, DistanciaHeader} from "../components";
 import { Titulo } from "../components"
 
+const CarrinhoVazio = styled.p`
+    color: black;
+    font: normal normal normal 20px/36px Raleway;    
+    text-align: center;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+`
+
 const DivBody = styled.div`
   width: 80vw;
   margin: auto;
   margin-bottom: 60px;
 `;
+
 const ContainerCarrinho = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,64 +34,70 @@ const DivTitulos = styled.div`
   display: flex;
   font-weight: 600;
   color: white;
+  padding-right: 15px;
 `;
 const DivInfos = styled.div`
   min-height: 150px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
-  border: 0.5px solid #707070;
+  border: none;
   border-radius: 0px 0px 20px 20px;
   opacity: 1;
   display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+  justify-content: center;
 `;
 
 const DivItem = styled.div`
   display: flex;
+  margin-top: 20px;
+  padding-right: 15px;
 `
 
 const TextoTitulos = styled.div``;
 
 const ImagemProduto = styled.img`
-  height: 100px;
+  width: 80%;
 `
 
 const Coluna1 = styled.div`
-  flex: 1;
+  flex: 15%;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
 `;
 const Coluna2 = styled.div`
-  flex: 1.2;
+  flex: 15%;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
 `;
 const Coluna3 = styled.div`
-  flex: 1;
+  flex: 15%;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
 `;
 const Coluna4 = styled.div`
-  flex: 1;
+  flex: 15%;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
 `;
 const Coluna5 = styled.div`
-  flex: 1.3;
+  flex: 15%;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
 `;
 const Coluna6 = styled.div`
-  flex: 1.3;
+  flex: 25%;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -176,7 +192,7 @@ const DivInformacoesTotal = styled.div`
   min-height: 150px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
-  border: 0.5px solid #707070;
+  border: none;
   border-radius: 0px 0px 20px 20px;
   opacity: 1;
 `;
@@ -204,6 +220,11 @@ const BotaoFinalizar = styled.button`
     color: #e44e6d;
     transition: 150ms;
     background-color: white;
+    cursor: pointer;
+  }
+
+  :focus {
+    outline: none;
   }
 `;
 
@@ -214,10 +235,12 @@ const DivInfosTextoValor = styled.div`
   justify-content: space-between;
   margin-top: 10%;
 `;
+
 const DivTextoTotal = styled.div`
   font-weight: 600;
   margin-left: 10%;
 `;
+
 const DivValorTotal = styled.div`
   font-weight: 400;
   margin-right: 10%;
@@ -258,27 +281,9 @@ class Carrinho extends Component {
               </Coluna6>
             </DivTitulos>
 
-            {/* {this.state.produtos.length > 0
-              ? listaFiltrada.map((produto) => (
-                  <CardProduto>
-                    <DivImagem>
-                      <ImagemProduto src={produto.photos} />
-                      <NomeLoja>{produto.category}</NomeLoja>
-                    </DivImagem>
-                    <InfosProduto>
-                      <NomeProduto>{produto.name}</NomeProduto>
-                      <DescricaoProduto>{produto.description}</DescricaoProduto>
-                      <PrecoProduto>R${produto.price}</PrecoProduto>
-                      <BotaoAdiciconar  onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdiciconar>
-                    </InfosProduto>
-                  </CardProduto>
-                ))
-              : this.state.carregandoProdutos
-              ? "Carregando produtos..."
-              : "Nenhum produto disponível"} */}
-
             <DivInfos>
-              {this.props.carrinho.map(produto => ( 
+              {this.props.carrinho.length > 0 ? 
+              this.props.carrinho.map(produto => ( 
               <DivItem>
                 <Coluna1><ImagemProduto src={produto.photos} /></Coluna1>
                 <Coluna2>{produto.name}</Coluna2>
@@ -288,14 +293,15 @@ class Carrinho extends Component {
                 <Coluna6>
                   <DivBotoes>
                     <BotaoAdicionar onClick={() => this.props.adicionarProduto(produto)}>Adicionar Produto</BotaoAdicionar>
-                    <BotaoRemover>
+                    <BotaoRemover onClick={() => this.props.removerProduto(produto.id)} >
                       <ImagensBotoes src={trash}></ImagensBotoes>
                       <ImagensBotoesHover src={trashwhite}></ImagensBotoesHover>
                     </BotaoRemover>
                   </DivBotoes>
                 </Coluna6>
             </DivItem>
-            ))}
+            )) : <CarrinhoVazio>Seu carrinho está vazio</CarrinhoVazio>
+          }
             </DivInfos>
 
             <DivTotal>
@@ -306,7 +312,7 @@ class Carrinho extends Component {
                   <DivValorTotal>R$ 500</DivValorTotal>
                 </DivInfosTextoValor>
                 <QuebraLinha />
-                <BotaoFinalizar>Finalizar Compra</BotaoFinalizar>
+                <BotaoFinalizar>Realizar pagamento</BotaoFinalizar>
               </DivInformacoesTotal>
             </DivTotal>
           </ContainerCarrinho>

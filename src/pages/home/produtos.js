@@ -99,7 +99,7 @@ const BotaoAdiciconar = styled.button`
   }
 `;
 const ColorFilter = styled.div`
-  height: 8vh;
+  height: 13vh;
   width: 100%;
   background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
   background: #e44e6d 0% 0% no-repeat padding-box;
@@ -108,14 +108,13 @@ const ColorFilter = styled.div`
 
 const FilterContainer = styled.div`
   display: flex;
-  height: 8vh;
-  justify-content: space-evenly;
+  height: 13vh;
+  justify-content: space-between;
   align-items: center;
   width: 80vw;
   opacity: 1;
   color: #ffffff;
   font-size: 14px;
-  margin: auto;
   width: 80vw;
   margin: auto;
 `;
@@ -124,27 +123,41 @@ const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const Field = styled.input`
+  font-size: 15px;
   border: none;
   outline: none;
   border-bottom: 1px solid #ffffff;
   background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
   background: #e44e6d 0% 0% no-repeat padding-box;
   color: #ffffff;
-
-  ::-webkit-input-placeholder {
+  width: 12vw;
+  opacity: 0.3;
+  ::placeholder {
     color: #ffffff;
+  }
+  :focus { 
+    opacity: 1;
   }
 `;
 const SelectFilter = styled.select`
+  font-size: 15px;
   border: none;
   outline: none;
   border-bottom: 1px solid #ffffff;
   background: var(--unnamed-color-e44e6d) 0% 0% no-repeat padding-box;
   background: #e44e6d 0% 0% no-repeat padding-box;
   color: #ffffff;
-  width: 100px;
+  width: 12vw;
+  opacity: 0.3;
+
 `;
+
+const TituloFiltro = styled.label`
+  font-size: 17px;
+  margin-bottom: 7px;
+`
 
 class ListaProdutos extends Component {
   state = {
@@ -257,17 +270,29 @@ class ListaProdutos extends Component {
       <div>
         <ColorFilter>
           <FilterContainer>
+            
             <InputDiv>
-              <label>Produto</label>
+              <TituloFiltro>Loja</TituloFiltro>
+            <SelectFilter>
+                <option selected>Selecione</option>
+                <option>Equilibrion Fitness</option>
+                <option>LNDN Eyewear</option>
+                <option>Louca das Plantas</option>
+                <option>Maria Bonita</option>
+              </SelectFilter>
+            </InputDiv>
+
+            <InputDiv>
+              <TituloFiltro>Produto</TituloFiltro>
               <Field
                 type="text"
                 value={this.props.inputBuscaNome}
                 onChange={this.onChangeInputBuscaNome}
-                placeholder="Busque pelo nome ou descrição"
+                placeholder="Nome ou descrição"
               ></Field>
             </InputDiv>
             <InputDiv>
-              <label>Valor Min.</label>
+              <TituloFiltro>Valor Minimo</TituloFiltro>
               <Field
                 type="number"
                 value={this.props.inputValorMin}
@@ -276,7 +301,7 @@ class ListaProdutos extends Component {
               ></Field>
             </InputDiv>
             <InputDiv>
-              <label>Valor Max.</label>
+              <TituloFiltro>Valor Máximo</TituloFiltro>
               <Field
                 type="number"
                 value={this.props.inputValorMax}
@@ -285,7 +310,7 @@ class ListaProdutos extends Component {
               ></Field>
             </InputDiv>
             <InputDiv>
-              <label>Ordenação</label>
+              <TituloFiltro>Ordenação</TituloFiltro>
               <SelectFilter
                 name="value"
                 value={this.state.sort}
@@ -302,7 +327,7 @@ class ListaProdutos extends Component {
         </ColorFilter>
 
         <ContainterProdutos>
-          <Titulo titulo="Produtos Recentes" />
+          <Titulo titulo="Lista de Produtos" />
           <ListaDeProdutos>
             {this.state.produtos.length > 0
               ? listaFiltrada.map((produto) => (
