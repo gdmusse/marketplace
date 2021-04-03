@@ -9,8 +9,11 @@
 
 ### Funcionamento 🛠
 
-- [x] O que funciona
-
+- [x] Cadastro de produtos
+- [x] Adiciona produtos ao carrinho
+- [x] Remove produtos do carrinho
+- [x] Filtro por preço, loja, nome
+- [x] Ordenação por preço (crescente/descrescente) e albética (a-z e z-a)
 
 ### Prints 🎨
 
