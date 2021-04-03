@@ -4,7 +4,7 @@
   <i>Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá</i>
 </div> 
 &nbsp
-<p align="center">Link do Surge: </p>
+<p align="center">Link do Surge: http://elo4-marketplace10.surge.sh/</p>
 <p align="center">Link da API: https://documenter.getpostman.com/view/9133542/TVzXDFXL</p>
 
 ### Funcionamento 🛠
@@ -14,14 +14,19 @@
 
 ### Prints 🎨
 
-Imagem
+![image](https://user-images.githubusercontent.com/77981874/113492812-bbbfdb80-94b0-11eb-88be-f564fef8340e.png)
+
 ***
 
-Imagem
+![image](https://user-images.githubusercontent.com/77981874/113492822-d72ae680-94b0-11eb-9884-e9f70ce397d1.png)
+
 ***
 
-Imagem
+images.githubusercontent.com/77981874/113492827-e316a880-94b0-11eb-96b5-6e35c1582763.png)
+
 ***
 
-Imagem
+![image](https://user-images.githubusercontent.com/77981874/113492834-eca01080-94b0-11eb-9367-05f1cd9edb30.png)
+
 ***
+
