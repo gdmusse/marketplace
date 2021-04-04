@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Header, Footer, DistanciaHeader } from "../components"
-import { Titulo } from "../components"
-import axios from 'axios'
+import { Titulo } from '../components'
 import styled from 'styled-components'
 
 const MainContainer = styled.div`
@@ -81,6 +79,7 @@ justify-content: center;
 
 const ButtonLojista = styled.button`
 text-transform: uppercase;
+outline: none;
 border: 3px solid #E44E6D;
 border-radius: 7px;
 opacity: 1;
@@ -96,18 +95,18 @@ opacity: 1;
 background-color: white;
 color: #E44E6D;
 &:hover{
-  background-color: #E44E6D;
-  color: white;
-  transition: 150ms;
+    background-color: #E44E6D;
+    color: white;
+    transition: 150ms;
 }
 &:hover {
     cursor: pointer;
-  }
-  margin-bottom: 3%;
-  `
+    }
+    margin-bottom: 3%;
+`
 const Letter = styled.p`
-  color: #4A2F87;
-  `
+    color: #4A2F87;
+`
 const ImgDiv = styled.div`
     width: 200px;
     height: 200px;
@@ -194,49 +193,8 @@ class NovoProduto extends Component {
         .catch(function (error) {
             alert("Cadastro Invalido! Preencha Corretamente todos os Campos")
             console.log(error);
-        });
-
-    //     const body = {
-    //         name: this.state.productName,
-    //         description: this.state.prodDescription,
-    //         price: this.state.prodPrice,
-    //         paymentMethod:this.state.payMeth,
-    //         category: this.state.store,
-    //         photos: this.state.prodImg,
-    //         installments: this.state.prodInstallments
-    //     };
-    //     console.log(body)
-    //     axios
-    //         .post(
-    //         "https://us-central1-labenu-apis.cloudfunctions.net/eloFourThree/products",
-    //         body,
-    //         {
-    //             headers:{}
-    //         }
-    //         )
-    //         .then((res) => {
-    //             this.setState({productName: ''})
-    //             this.setState({prodDescription: ''})
-    //             this.setState({prodPrice: ''})
-    //             this.setState({payMeth: ''})
-    //             this.setState({store: ''})
-    //             this.setState({prodImg: ''})
-    //             this.setState({prodInstallments: ''})
-    //             console.log(res)
-    //             alert("Cadastro realizado com Sucesso")
-    //         })
-    //         .catch((err) => {
-    //             this.setState({productName: ''})
-    //             this.setState({prodDescription: ''})
-    //             this.setState({prodPrice: ''})
-    //             this.setState({payMeth: ''})
-    //             this.setState({store: ''})
-    //             this.setState({prodImg: ''})
-    //             this.setState({prodInstallments: ''})
-    //             console.log(err)
-    //             alert("Cadastro Invalido! Preencha Corretamente todos os Campos")
-    //         });
-    };
+        })
+    }
 
     render() {
         return (

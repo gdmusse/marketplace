@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Elo4Bannner from "../../imagens/banners/Slider2.png";
-import Cosmetic from "../../imagens/banners/Slider1.png";
+import Elo4Bannner from "../../imagens/banners/Slider1.png";
+import Cosmetic from "../../imagens/banners/Slider2.png";
 import Botanical from "../../imagens/banners/Slider3.png";
 import Eyewear from "../../imagens/banners/Slider4.png";
 import Fitness from "../../imagens/banners/Slider5.png"
