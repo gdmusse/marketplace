@@ -13,7 +13,7 @@
 - [x] Adiciona produtos ao carrinho
 - [x] Remove produtos do carrinho
 - [x] Filtro por preço, loja, nome
-- [x] Ordenação por preço (crescente/descrescente) e alfabética (a-z e z-a)
+- [x] Ordenação por preço (crescente/descrescente) e alfabética (a-z / z-a)
 
 ### Prints 🎨
 
