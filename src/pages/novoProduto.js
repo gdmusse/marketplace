@@ -217,8 +217,8 @@ class NovoProduto extends Component {
                 <option value={""}>Selecione</option>
                 <option value={"Equilibrion"}>Equilibrion Fitness</option>
                 <option value={"LNDN"}>LNDN Eyewear</option>
-                <option value={"LoucaDasPlantas"}>Louca das Plantas</option>
-                <option value={"MariaBonita"}>Maria Bonita</option>
+                <option value={"Louca Das Plantas"}>Louca das Plantas</option>
+                <option value={"Maria Bonita"}>Maria Bonita</option>
               </Select>
               <Letter>Descrição</Letter>
               <Input
