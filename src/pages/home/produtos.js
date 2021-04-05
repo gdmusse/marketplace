@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Titulo } from "../../components";
+import { Tooltip } from 'antd';
 
 const ContainterProdutos = styled.div`
   min-height: 500px;
@@ -66,15 +67,29 @@ const InfosProduto = styled.div`
 const NomeProduto = styled.label`
   color: #202020;
   font-weight: 600;
-  font-size: 25px;
-  margin-bottom: 10px;
-`;
+  font-size: 20px;
+  margin-bottom: 5px;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  `;
 
 const DescricaoProduto = styled.label`
   color: #202020;
-  text-align: center;
+  text-align: center; 
   font-size: 18px;
-  word-break: break-all;
+  height: 60px;
+  width: 100%;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
 `;
 
 const PrecoProduto = styled.label`
@@ -356,8 +371,14 @@ class ListaProdutos extends Component {
                       <NomeLoja>{produto.category}</NomeLoja>
                     </DivImagem>
                     <InfosProduto>
-                      <NomeProduto>{produto.name}</NomeProduto>
-                      <DescricaoProduto>{produto.description}</DescricaoProduto>
+                        <Tooltip title={produto.name}>
+                        <NomeProduto>{produto.name}</NomeProduto>
+                        </Tooltip>
+
+                        <Tooltip title={produto.description}>
+                        <DescricaoProduto>{produto.description}</DescricaoProduto>
+                        </Tooltip>
+                      
                       <PrecoProduto>R${produto.price}</PrecoProduto>
                       <BotaoAdiciconar
                         onClick={() => this.props.adicionarProduto(produto)}
