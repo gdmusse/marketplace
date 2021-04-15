@@ -1,4 +1,6 @@
 ### <p align="center">💻 Elo4 - Cruz-Marketplace 10 💻</p>
+<p><i>
+ Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá</i></p>
 &nbsp
 <p align="center">Link do Surge: http://elo4-marketplace10.surge.sh/</p>
 <p align="center">Link da API: https://documenter.getpostman.com/view/9133542/TVzXDFXL</p>
@@ -25,13 +27,7 @@
 
 ***
 
- Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá
- 
 
-Link do Surge: 
-
-Link da API: 
-Funcionamento 🛠
 
     
 
