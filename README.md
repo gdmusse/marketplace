@@ -1,4 +1,4 @@
-### <p align="center">💻 MarketPlace10 - Elo4 💻</p>
+<h1 align="center">💻 MarketPlace10 💻</h1>
 
 <div align="center" margin-bottom="10px">
   <i>Beatriz Lisboa, Gabriel Dienstmann Musse, Maria Eduarda Auler, Milena Cacau e Thiago Jatobá</i>
